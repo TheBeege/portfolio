@@ -1,0 +1,74 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Section from '../components/Section.astro';
+---
+
+<Layout title="Bryan Berry — Portfolio">
+  <!-- Hero -->
+  <div class="min-h-[70vh] flex items-center">
+    <div class="max-w-5xl mx-auto px-6">
+      <p class="text-primary font-mono mb-4">Hi, I'm</p>
+      <h1 class="text-5xl md:text-7xl font-bold mb-4">Bryan Berry</h1>
+      <p class="text-xl md:text-2xl text-text-muted max-w-2xl mb-8">
+        Engineering leader, builder, and community organizer based in Seoul.
+      </p>
+      <div class="flex gap-4">
+        <a href="#contact" class="bg-primary hover:bg-primary-dark px-6 py-3 rounded-lg font-medium transition-colors">
+          Get in touch
+        </a>
+        <a href="#experience" class="border border-white/20 hover:border-white/40 px-6 py-3 rounded-lg font-medium transition-colors">
+          See my work
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- About -->
+  <Section id="about" title="About">
+    <div class="text-text-muted text-lg leading-relaxed max-w-3xl space-y-4">
+      <p>Placeholder — your story goes here.</p>
+    </div>
+  </Section>
+
+  <!-- Experience -->
+  <Section id="experience" title="Experience">
+    <div class="space-y-8">
+      <div class="border-l-2 border-primary pl-6">
+        <h3 class="text-xl font-semibold">Role Title</h3>
+        <p class="text-primary text-sm">Company — 2024–Present</p>
+        <p class="text-text-muted mt-2">Description placeholder.</p>
+      </div>
+    </div>
+  </Section>
+
+  <!-- Projects -->
+  <Section id="projects" title="Projects">
+    <div class="grid md:grid-cols-2 gap-6">
+      <div class="bg-surface-light rounded-xl p-6 border border-white/10 hover:border-primary/50 transition-colors">
+        <h3 class="text-lg font-semibold mb-2">Project Name</h3>
+        <p class="text-text-muted text-sm mb-4">Description placeholder.</p>
+        <div class="flex gap-2">
+          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Tag</span>
+        </div>
+      </div>
+    </div>
+  </Section>
+
+  <!-- Community -->
+  <Section id="community" title="Community">
+    <div class="text-text-muted text-lg leading-relaxed max-w-3xl space-y-4">
+      <p>Placeholder — CodeSeoul, mentoring, events.</p>
+    </div>
+  </Section>
+
+  <!-- Contact -->
+  <Section id="contact" title="Get in Touch">
+    <div class="max-w-xl">
+      <p class="text-text-muted text-lg mb-8">Placeholder — links and contact info.</p>
+      <div class="flex gap-4">
+        <a href="https://github.com/TheBeege" target="_blank" class="text-text-muted hover:text-text transition-colors">GitHub</a>
+        <a href="https://linkedin.com/in/" target="_blank" class="text-text-muted hover:text-text transition-colors">LinkedIn</a>
+      </div>
+    </div>
+  </Section>
+</Layout>
