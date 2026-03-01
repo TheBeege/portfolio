@@ -1,0 +1,61 @@
+---
+---
+
+<nav class="fixed top-0 w-full bg-surface/80 backdrop-blur-md border-b border-white/10 z-50">
+  <div class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
+    <a href="/" class="text-lg font-bold hover:text-primary transition-colors">BB</a>
+    
+    <!-- Desktop nav -->
+    <div class="hidden md:flex gap-6 text-sm text-text-muted">
+      <a href="#about" class="hover:text-text transition-colors">About</a>
+      <a href="#personal-projects" class="hover:text-text transition-colors">Projects</a>
+      <a href="#professional-experience" class="hover:text-text transition-colors">Experience</a>
+      <a href="#community" class="hover:text-text transition-colors">Community</a>
+      <a href="#contact" class="hover:text-text transition-colors">Contact</a>
+    </div>
+
+    <!-- Hamburger button -->
+    <button id="menu-toggle" class="md:hidden p-2 text-text-muted hover:text-text transition-colors" aria-label="Open menu">
+      <svg id="menu-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+      <svg id="close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
+  </div>
+
+  <!-- Mobile drawer -->
+  <div id="mobile-menu" class="hidden md:hidden border-t border-white/10 bg-surface/95 backdrop-blur-md">
+    <div class="flex flex-col px-6 py-4 gap-4 text-text-muted">
+      <a href="#about" class="hover:text-text transition-colors py-2">About</a>
+      <a href="#personal-projects" class="hover:text-text transition-colors py-2">Projects</a>
+      <a href="#professional-experience" class="hover:text-text transition-colors py-2">Experience</a>
+      <a href="#community" class="hover:text-text transition-colors py-2">Community</a>
+      <a href="#contact" class="hover:text-text transition-colors py-2">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<script>
+  const toggle = document.getElementById('menu-toggle');
+  const menu = document.getElementById('mobile-menu');
+  const menuIcon = document.getElementById('menu-icon');
+  const closeIcon = document.getElementById('close-icon');
+
+  toggle?.addEventListener('click', () => {
+    const isOpen = !menu?.classList.contains('hidden');
+    menu?.classList.toggle('hidden');
+    menuIcon?.classList.toggle('hidden');
+    closeIcon?.classList.toggle('hidden');
+  });
+
+  // Close menu when a link is clicked
+  menu?.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      menu?.classList.add('hidden');
+      menuIcon?.classList.remove('hidden');
+      closeIcon?.classList.add('hidden');
+    });
+  });
+</script>

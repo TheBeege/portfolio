@@ -24,6 +24,21 @@ import Section from '../components/Section.astro';
     </div>
   </div>
 
+  <!-- About -->
+  <Section id="about" title="About">
+    <div class="text-text-muted text-lg leading-relaxed max-w-3xl space-y-4">
+      <p>
+        I'm a software engineer and engineering leader who's spent the last 9 years building things in Seoul. I've worked across gaming, telecom, AI, and medical tech — from Riot Games to PUBG to Lunit, where I led teams building annotation and data management tools for cancer detection AI.
+      </p>
+      <p>
+        I like building things that matter, leading teams that ship, and teaching people who want to learn. I founded CodeSeoul to give developers in Seoul a place to grow, and I'm currently building a startup while exploring medical AI.
+      </p>
+      <p>
+        Georgia Tech grad (Computational Media). American expat. Fluent in English, working on Korean.
+      </p>
+    </div>
+  </Section>
+
   <!-- Personal Projects -->
   <Section id="personal-projects" title="Personal Projects">
     <div class="space-y-16">
@@ -67,7 +82,7 @@ import Section from '../components/Section.astro';
         <div class="grid md:grid-cols-3 gap-4 mb-6">
           <img src="/meddaas1.png" alt="MedDaaS homepage with search bar and progress card showing a score of 62.9/100 with 2 reports completed" class="rounded-lg border border-white/10 w-full" />
           <img src="/meddaas2.png" alt="MedDaaS reporting interface showing a chest X-ray with brightness and contrast controls alongside a report text editor" class="rounded-lg border border-white/10 w-full" />
-          <img src="/medaas3.png" alt="MedDaaS detailed feedback page with scoring breakdown for similarity, completeness, accuracy, and terminology, plus finding-by-finding analysis" class="rounded-lg border border-white/10 w-full" />
+          <img src="/medaas3.png" alt="MedDaaS detailed feedback page with scoring breakdown for similarity, completeness, accuracy, and terminology" class="rounded-lg border border-white/10 w-full" />
         </div>
         <div class="flex flex-wrap gap-2">
           <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">FastAPI</span>
@@ -85,7 +100,7 @@ import Section from '../components/Section.astro';
         <div class="flex items-start justify-between mb-4">
           <h3 class="text-2xl font-semibold">Model Server</h3>
           <div class="flex gap-3 text-sm text-text-muted">
-            <!-- TODO: add GitHub link once repo is public -->
+            <!-- TODO: add GitHub link once repo is identified -->
           </div>
         </div>
         <p class="text-text-muted mb-6">
@@ -104,37 +119,156 @@ import Section from '../components/Section.astro';
   </Section>
 
   <!-- Professional Experience -->
-  <Section id="professional-projects" title="Professional Experience">
-    <div class="space-y-8">
-      <div class="border-l-2 border-primary pl-6">
-        <h3 class="text-xl font-semibold">Role Title</h3>
-        <p class="text-primary text-sm">Company — 2024–Present</p>
-        <p class="text-text-muted mt-2">Description placeholder.</p>
-      </div>
-    </div>
-  </Section>
+  <Section id="professional-experience" title="Professional Experience">
+    <div class="space-y-10">
 
-  <!-- About -->
-  <Section id="about" title="About">
-    <div class="text-text-muted text-lg leading-relaxed max-w-3xl space-y-4">
-      <p>Placeholder — your story goes here.</p>
+      <!-- Lunit -->
+      <div class="border-l-2 border-primary pl-6">
+        <h3 class="text-xl font-semibold">Product Management Team Lead, AI Platform</h3>
+        <p class="text-primary text-sm mb-1">Lunit — Gangnam-gu, Seoul</p>
+        <p class="text-text-muted text-sm mb-3">August 2022 – October 2025 (3 years, 2 months)</p>
+        <ul class="text-text-muted space-y-2 list-disc list-inside text-sm">
+          <li>Planned and implemented the first database for radiology products' training and validation data, covering petabytes of data, improving data management efficiency and regulatory compliance.</li>
+          <li>Coordinated data model redesign and de-duplication logic to reduce manual efforts across data ingestion.</li>
+          <li>Defined and implemented a data usage management system to mitigate risk of data leakage in the AI model development process.</li>
+          <li>Expanded product management capabilities by hiring 2 PMs, 1 program manager, 2 designers, and 1 QA engineer.</li>
+        </ul>
+      </div>
+
+      <div class="border-l-2 border-primary pl-6">
+        <h3 class="text-xl font-semibold">AI Platform Team Lead</h3>
+        <p class="text-primary text-sm mb-1">Lunit — Gangnam-gu, Seoul</p>
+        <p class="text-text-muted text-sm mb-3">September 2021 – August 2022 (11 months)</p>
+        <ul class="text-text-muted space-y-2 list-disc list-inside text-sm">
+          <li>Led team to improve annotation project flow, lauded by customers as "the smoothest annotation projects have ever gone."</li>
+          <li>Added 2.5D image modality support to the image annotation tool.</li>
+          <li>Expanded the team by hiring a DevOps engineer, backend engineering lead, backend engineer, and MLOps engineering lead.</li>
+          <li>Designed and led implementation of hierarchical data labels, contour annotations, reviewer system, progress visualization, and bad data reporting.</li>
+        </ul>
+      </div>
+
+      <div class="border-l-2 border-primary pl-6">
+        <h3 class="text-xl font-semibold">Senior Back-end Engineer / DevOps Engineer</h3>
+        <p class="text-primary text-sm mb-1">Lunit — Gangnam-gu, Seoul</p>
+        <p class="text-text-muted text-sm mb-3">January 2021 – September 2021 (8 months)</p>
+        <ul class="text-text-muted space-y-2 list-disc list-inside text-sm">
+          <li>Built CI/CD system on BuildKite for the training data annotation system.</li>
+          <li>Refactored FastAPI services to better follow microservice architecture.</li>
+          <li>Configured Kubernetes deployment on AWS EKS (Terraform) and baremetal (Ansible).</li>
+        </ul>
+      </div>
+
+      <!-- Posicube -->
+      <div class="border-l-2 border-white/30 pl-6">
+        <h3 class="text-xl font-semibold">Back-end Engineer / DevOps / Team Lead</h3>
+        <p class="text-primary text-sm mb-1">Posicube — Seocho-gu, Seoul</p>
+        <p class="text-text-muted text-sm mb-3">September 2018 – December 2020 (2 years, 3 months)</p>
+        <ul class="text-text-muted space-y-2 list-disc list-inside text-sm">
+          <li>Built back-end services for AI-driven phone reception product and online delivery product in NodeJS on AWS Lambda and GCP Kubernetes.</li>
+          <li>Led back-end team of 4 engineers building MSA-compatible monorepo for IoT-to-AI communication.</li>
+          <li>Designed and managed infrastructure in AWS and GCP using Terraform. Set up ELK logging on GCP Kubernetes.</li>
+          <li>Built remote control service for field Raspberry Pi devices using Golang on AWS ECS.</li>
+        </ul>
+      </div>
+
+      <!-- PUBG -->
+      <div class="border-l-2 border-white/30 pl-6">
+        <h3 class="text-xl font-semibold">Back-end Engineer</h3>
+        <p class="text-primary text-sm mb-1">PUBG Corporation — Seocho-gu, Seoul</p>
+        <p class="text-text-muted text-sm mb-3">November 2017 – July 2018 (8 months)</p>
+        <ul class="text-text-muted space-y-2 list-disc list-inside text-sm">
+          <li>Developed microservices using Go and C#. Automated infrastructure with Terraform.</li>
+          <li>Built data pipelines for public API service and ML systems using AWS Lambda, SQS, S3, Redshift, and Kinesis.</li>
+          <li>Delivered public API service written in Go, running on AWS ECS.</li>
+        </ul>
+      </div>
+
+      <!-- SK Tech X -->
+      <div class="border-l-2 border-white/30 pl-6">
+        <h3 class="text-xl font-semibold">Back-end Engineer</h3>
+        <p class="text-primary text-sm mb-1">SK Tech X — Gangnam-gu, Seoul</p>
+        <p class="text-text-muted text-sm mb-3">January 2017 – November 2017 (10 months)</p>
+        <ul class="text-text-muted space-y-2 list-disc list-inside text-sm">
+          <li>Worked on service platform built on Spring consisting of 8 services.</li>
+          <li>Refactored build pipeline, reducing local build time from 7+ minutes to under 2 minutes.</li>
+        </ul>
+      </div>
+
+      <!-- Riot Games -->
+      <div class="border-l-2 border-white/30 pl-6">
+        <h3 class="text-xl font-semibold">Live Data Analyst</h3>
+        <p class="text-primary text-sm mb-1">Riot Games — Santa Monica, CA</p>
+        <p class="text-text-muted text-sm mb-3">October 2013 – September 2016 (2 years, 11 months)</p>
+        <ul class="text-text-muted space-y-2 list-disc list-inside text-sm">
+          <li>Developed and maintained near-real-time, international data collection systems at minute-resolution for 100+ metrics using Bash, Python, and Go.</li>
+          <li>Created Tableau reports on client network performance and game health metrics using Hadoop Hive data from millions of players globally.</li>
+          <li>Developed a player impact REST API in Go deployed on Docker, exposing abnormal metric values around the player experience.</li>
+          <li>Designed and taught a Python basics class to NOC Technicians.</li>
+        </ul>
+      </div>
+
+      <!-- Chainsaw Rabbit -->
+      <div class="border-l-2 border-white/30 pl-6">
+        <h3 class="text-xl font-semibold">Co-founder & Developer</h3>
+        <p class="text-primary text-sm mb-1">Chainsaw Rabbit Games — San Francisco, CA</p>
+        <p class="text-text-muted text-sm mb-3">November 2012 – June 2015 (part-time)</p>
+        <ul class="text-text-muted space-y-2 list-disc list-inside text-sm">
+          <li>Co-designed asynchronous, competitive, multi-platform mobile game.</li>
+          <li>Created game client in Lua/CoronaSDK and Python-based game server using Twisted Matrix.</li>
+        </ul>
+      </div>
+
+      <!-- Asurion -->
+      <div class="border-l-2 border-white/30 pl-6">
+        <h3 class="text-xl font-semibold">Production Systems Analyst → Analyst II</h3>
+        <p class="text-primary text-sm mb-1">Asurion — San Francisco, CA → Nashville, TN</p>
+        <p class="text-text-muted text-sm mb-3">August 2010 – October 2013 (3 years)</p>
+        <ul class="text-text-muted space-y-2 list-disc list-inside text-sm">
+          <li>Implemented distributed Splunk infrastructure from the ground up. Reduced incident isolation time by 80%.</li>
+          <li>Administered homebrewed SSIS-based ETL framework of 600+ active jobs.</li>
+        </ul>
+      </div>
+
+      <!-- Education -->
+      <div class="mt-12 border-l-2 border-primary/50 pl-6">
+        <h3 class="text-xl font-semibold">B.S. Computational Media</h3>
+        <p class="text-primary text-sm mb-1">Georgia Institute of Technology</p>
+        <p class="text-text-muted text-sm">2006 – 2011</p>
+      </div>
+
     </div>
   </Section>
 
   <!-- Community -->
   <Section id="community" title="Community">
     <div class="text-text-muted text-lg leading-relaxed max-w-3xl space-y-4">
-      <p>Placeholder — CodeSeoul, mentoring, events.</p>
+      <p>
+        I founded <a href="https://www.meetup.com/codeseoul/" target="_blank" class="text-primary hover:underline">CodeSeoul</a> in 2016 — a non-profit developer community in Seoul with 3,400+ members on Meetup, averaging 40 attendees per event. We run coding classes, hackathons, career workshops, and more.
+      </p>
+      <p>
+        I also taught programming to children (Processing, Java, Python, Scratch, and the Kivy mobile framework) as volunteer work from 2017–2018.
+      </p>
+      <p>
+        Check us out on <a href="https://www.youtube.com/@codeseoul" target="_blank" class="text-primary hover:underline">YouTube</a>.
+      </p>
     </div>
   </Section>
 
   <!-- Contact -->
   <Section id="contact" title="Get in Touch">
     <div class="max-w-xl">
-      <p class="text-text-muted text-lg mb-8">Placeholder — links and contact info.</p>
-      <div class="flex gap-4">
-        <a href="https://github.com/TheBeege" target="_blank" class="text-text-muted hover:text-text transition-colors">GitHub</a>
-        <a href="https://linkedin.com/in/" target="_blank" class="text-text-muted hover:text-text transition-colors">LinkedIn</a>
+      <p class="text-text-muted text-lg mb-8">
+        Software engineer, educator, helper. Currently building at <a href="https://hapsen.tech" target="_blank" class="text-primary hover:underline">Hapsen Tech</a>.
+      </p>
+      <div class="grid grid-cols-2 gap-4 text-text-muted">
+        <a href="https://github.com/TheBeege" target="_blank" class="hover:text-text transition-colors">GitHub</a>
+        <a href="https://www.linkedin.com/in/thebeege/" target="_blank" class="hover:text-text transition-colors">LinkedIn</a>
+        <a href="https://www.instagram.com/tehbeege" target="_blank" class="hover:text-text transition-colors">Instagram</a>
+        <a href="mailto:bryanberry235711@gmail.com" class="hover:text-text transition-colors">Email</a>
+        <a href="tel:+821050555576" class="hover:text-text transition-colors">📞 +82 10-5055-5576</a>
+        <a href="tel:+19548507518" class="hover:text-text transition-colors">📞 +1 954-850-7518</a>
+        <a href="https://card.beege.works" target="_blank" class="hover:text-text transition-colors">Business Card</a>
+        <span>KakaoTalk: TheBeege</span>
       </div>
     </div>
   </Section>

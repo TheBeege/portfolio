@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css'
+import MobileNav from '../components/MobileNav.astro'
 
 interface Props {
   title: string;
@@ -19,18 +20,7 @@ const { title, description = "Bryan Berry — Engineering Leader, Builder, Commu
     <title>{title}</title>
   </head>
   <body class="bg-surface text-text min-h-screen antialiased">
-    <nav class="fixed top-0 w-full bg-surface/80 backdrop-blur-md border-b border-white/10 z-50">
-      <div class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
-        <a href="/" class="text-lg font-bold hover:text-primary transition-colors">BB</a>
-        <div class="flex gap-6 text-sm text-text-muted">
-          <a href="#about" class="hover:text-text transition-colors">About</a>
-          <a href="#experience" class="hover:text-text transition-colors">Experience</a>
-          <a href="#projects" class="hover:text-text transition-colors">Projects</a>
-          <a href="#community" class="hover:text-text transition-colors">Community</a>
-          <a href="#contact" class="hover:text-text transition-colors">Contact</a>
-        </div>
-      </div>
-    </nav>
+    <MobileNav />
 
     <main class="pt-20">
       <slot />
