@@ -17,32 +17,58 @@ import Section from '../components/Section.astro';
         <a href="#contact" class="bg-primary hover:bg-primary-dark px-6 py-3 rounded-lg font-medium transition-colors">
           Get in touch
         </a>
-        <a href="#projects" class="border border-white/20 hover:border-white/40 px-6 py-3 rounded-lg font-medium transition-colors">
+        <a href="#personal-projects" class="border border-white/20 hover:border-white/40 px-6 py-3 rounded-lg font-medium transition-colors">
           See my work
         </a>
       </div>
     </div>
   </div>
 
-  <!-- Projects -->
-  <Section id="projects" title="Projects">
-    <div class="grid md:grid-cols-2 gap-8">
+  <!-- Personal Projects -->
+  <Section id="personal-projects" title="Personal Projects">
+    <div class="space-y-16">
+
+      <!-- VizPlan -->
+      <div class="bg-surface-light rounded-xl p-8 border border-white/10">
+        <div class="flex items-start justify-between mb-4">
+          <h3 class="text-2xl font-semibold">VizPlan</h3>
+          <div class="flex gap-3 text-sm text-text-muted">
+            <a href="https://vizplan.app" target="_blank" class="hover:text-primary transition-colors">Live ↗</a>
+          </div>
+        </div>
+        <p class="text-text-muted mb-6">
+          A SaaS tool for engineering leaders to visualize alignment between company goals and the work teams are actually doing. Connects to project management tools (Jira, Linear, etc.) and surfaces where planned work drifts from strategic objectives — giving leaders real visibility without micromanaging. Designed with a bidirectional sync strategy to meet teams where they already work.
+        </p>
+        <div class="grid md:grid-cols-3 gap-4 mb-6">
+          <img src="/vizplan1.png" alt="VizPlan landing page showing 'Plan Your Work From Vision to Action' headline with an isometric node visualization" class="rounded-lg border border-white/10 w-full" />
+          <img src="/vizplan2.png" alt="VizPlan hierarchical tree view with nested task cards showing priority levels and roll-up progress" class="rounded-lg border border-white/10 w-full" />
+          <img src="/vizplan3.png" alt="VizPlan team settings page showing member management and API key configuration" class="rounded-lg border border-white/10 w-full" />
+        </div>
+        <div class="flex flex-wrap gap-2">
+          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Next.js</span>
+          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">TypeScript</span>
+          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Supabase</span>
+          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">SaaS</span>
+        </div>
+      </div>
 
       <!-- MedDaaS -->
-      <div class="bg-surface-light rounded-xl p-6 border border-white/10 hover:border-primary/50 transition-colors md:col-span-2">
-        <div class="flex items-start justify-between mb-3">
-          <h3 class="text-xl font-semibold">MedDaaS</h3>
+      <div class="bg-surface-light rounded-xl p-8 border border-white/10">
+        <div class="flex items-start justify-between mb-4">
+          <h3 class="text-2xl font-semibold">MedDaaS</h3>
           <div class="flex gap-3 text-sm text-text-muted">
             <a href="https://meddaas.beege.works" target="_blank" class="hover:text-primary transition-colors">Live ↗</a>
             <a href="https://github.com/CodeSeoul/MedDaaS" target="_blank" class="hover:text-primary transition-colors">GitHub ↗</a>
           </div>
         </div>
-        <p class="text-text-muted mb-4">
-          An AI-powered radiology training platform that helps medical students and radiologists sharpen their diagnostic skills. Students write diagnostic reports for chest X-rays, and the system compares them against expert ground truth using multi-step LLM analysis — delivering finding-by-finding scoring, educational feedback, and actionable improvement suggestions in real time via streaming.
+        <p class="text-text-muted mb-6">
+          An AI-powered radiology training platform that helps medical students and radiologists sharpen their diagnostic skills. Students write diagnostic reports for chest X-rays, and the system compares them against expert ground truth using multi-step LLM analysis — delivering finding-by-finding scoring, educational feedback, and actionable improvement suggestions in real time via streaming. Built for the Spoon OS hackathon with CodeSeoul.
         </p>
-        <p class="text-text-muted mb-4">
-          Built for the Spoon OS hackathon with CodeSeoul. Uses a graph-based LLM workflow (SpoonAI SDK) to orchestrate comparison, with FAISS-powered semantic search for RAG-based image retrieval and a multi-dimensional scoring system covering similarity, completeness, accuracy, and medical terminology.
-        </p>
+        <div class="grid md:grid-cols-3 gap-4 mb-6">
+          <img src="/meddaas1.png" alt="MedDaaS homepage with search bar and progress card showing a score of 62.9/100 with 2 reports completed" class="rounded-lg border border-white/10 w-full" />
+          <img src="/meddaas2.png" alt="MedDaaS reporting interface showing a chest X-ray with brightness and contrast controls alongside a report text editor" class="rounded-lg border border-white/10 w-full" />
+          <img src="/medaas3.png" alt="MedDaaS detailed feedback page with scoring breakdown for similarity, completeness, accuracy, and terminology, plus finding-by-finding analysis" class="rounded-lg border border-white/10 w-full" />
+        </div>
         <div class="flex flex-wrap gap-2">
           <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">FastAPI</span>
           <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Python</span>
@@ -54,41 +80,16 @@ import Section from '../components/Section.astro';
         </div>
       </div>
 
-      <!-- VizPlan -->
-      <div class="bg-surface-light rounded-xl p-6 border border-white/10 hover:border-primary/50 transition-colors">
-        <div class="flex items-start justify-between mb-3">
-          <h3 class="text-xl font-semibold">VizPlan</h3>
-          <div class="flex gap-3 text-sm text-text-muted">
-            <a href="https://vizplan.app" target="_blank" class="hover:text-primary transition-colors">Live ↗</a>
-          </div>
-        </div>
-        <p class="text-text-muted mb-4">
-          A SaaS tool for engineering leaders to visualize alignment between company goals and the work teams are actually doing. Connects to project management tools (Jira, Linear, etc.) and surfaces where planned work drifts from strategic objectives — giving leaders real visibility without micromanaging.
-        </p>
-        <p class="text-text-muted mb-4">
-          Built as part of Hapsen, the company I co-founded. Designed with a bidirectional sync strategy to meet teams where they already work. Currently in the problem validation and early prototype stage.
-        </p>
-        <div class="flex flex-wrap gap-2">
-          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Next.js</span>
-          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">TypeScript</span>
-          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Supabase</span>
-          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">SaaS</span>
-        </div>
-      </div>
-
-      <!-- model_server -->
-      <div class="bg-surface-light rounded-xl p-6 border border-white/10 hover:border-primary/50 transition-colors">
-        <div class="flex items-start justify-between mb-3">
-          <h3 class="text-xl font-semibold">Model Server</h3>
+      <!-- Model Server -->
+      <div class="bg-surface-light rounded-xl p-8 border border-white/10">
+        <div class="flex items-start justify-between mb-4">
+          <h3 class="text-2xl font-semibold">Model Server</h3>
           <div class="flex gap-3 text-sm text-text-muted">
             <!-- TODO: add GitHub link once repo is public -->
           </div>
         </div>
-        <p class="text-text-muted mb-4">
-          A self-hosted LLM inference server for running open-weight models locally. Built to support a medical device AI application — providing diagnostic assistance for field/service maintenance of imaging devices (starting with ultrasound).
-        </p>
-        <p class="text-text-muted mb-4">
-          Designed to run models like Qwen on local infrastructure, avoiding vendor lock-in and VPN dependencies. Part of a co-venture focused on bringing AI-assisted diagnostics to all imaging device types.
+        <p class="text-text-muted mb-6">
+          A self-hosted LLM inference server for running open-weight models locally. Built to support a medical device AI application — providing diagnostic assistance for field and service maintenance of imaging devices (starting with ultrasound). Designed to run models like Qwen on local infrastructure, avoiding vendor lock-in and VPN dependencies.
         </p>
         <div class="flex flex-wrap gap-2">
           <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Python</span>
@@ -102,21 +103,21 @@ import Section from '../components/Section.astro';
     </div>
   </Section>
 
-  <!-- About -->
-  <Section id="about" title="About">
-    <div class="text-text-muted text-lg leading-relaxed max-w-3xl space-y-4">
-      <p>Placeholder — your story goes here.</p>
-    </div>
-  </Section>
-
-  <!-- Experience -->
-  <Section id="experience" title="Experience">
+  <!-- Professional Experience -->
+  <Section id="professional-projects" title="Professional Experience">
     <div class="space-y-8">
       <div class="border-l-2 border-primary pl-6">
         <h3 class="text-xl font-semibold">Role Title</h3>
         <p class="text-primary text-sm">Company — 2024–Present</p>
         <p class="text-text-muted mt-2">Description placeholder.</p>
       </div>
+    </div>
+  </Section>
+
+  <!-- About -->
+  <Section id="about" title="About">
+    <div class="text-text-muted text-lg leading-relaxed max-w-3xl space-y-4">
+      <p>Placeholder — your story goes here.</p>
     </div>
   </Section>
 
