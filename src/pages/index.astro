@@ -1,4 +1,6 @@
 ---
+import { Image } from 'astro:assets';
+import profileImage from '../assets/profile.png';
 import Layout from '../layouts/Layout.astro';
 import Section from '../components/Section.astro';
 import ProjectCard from '../components/ProjectCard.astro';
@@ -20,13 +22,13 @@ import OtherContributions from '../components/OtherContributions.astro';
           <a href="#contact" class="bg-primary hover:bg-primary-dark px-6 py-3 rounded-lg font-medium transition-colors">
             Get in touch
           </a>
-          <a href="#personal-projects" class="border border-white/20 hover:border-white/40 px-6 py-3 rounded-lg font-medium transition-colors">
+          <a href="#professional-projects" class="border border-white/20 hover:border-white/40 px-6 py-3 rounded-lg font-medium transition-colors">
             See my work
           </a>
         </div>
       </div>
       <div class="w-48 md:w-64 flex-shrink-0 order-1 md:order-2">
-        <img src="/profile.png" alt="Photo of Beege"
+        <Image src={profileImage} alt="Photo of Beege" width={256} height={256}
           class="w-full rounded-2xl border-2 border-primary/50" />
       </div>
     </div>
@@ -377,10 +379,10 @@ import OtherContributions from '../components/OtherContributions.astro';
   <Section id="community" title="Community">
     <div class="text-text-muted text-lg leading-relaxed max-w-3xl space-y-4">
       <p>
-        I founded <a href="https://www.meetup.com/codeseoul/" target="_blank" class="text-primary hover:underline">CodeSeoul</a> in 2016 — a non-profit developer community in Seoul with 3,400+ members on Meetup, averaging 40 attendees per event. We run coding classes, hackathons, career workshops, and more.
+        I founded <a href="https://www.meetup.com/codeseoul/" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">CodeSeoul</a> in 2016 — a non-profit developer community in Seoul with 3,400+ members on Meetup, averaging 40 attendees per event. We run coding classes, hackathons, career workshops, and more.
       </p>
       <p>
-        Check us out on <a href="https://www.youtube.com/@codeseoul" target="_blank" class="text-primary hover:underline">YouTube</a>.
+        Check us out on <a href="https://www.youtube.com/@codeseoul" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">YouTube</a>.
       </p>
     </div>
   </Section>
@@ -389,16 +391,16 @@ import OtherContributions from '../components/OtherContributions.astro';
   <Section id="contact" title="Get in Touch">
     <div class="max-w-xl">
       <p class="text-text-muted text-lg mb-8">
-        Software engineer, educator, helper. Currently building at <a href="https://hapsen.tech" target="_blank" class="text-primary hover:underline">Hapsen Tech</a>.
+        Software engineer, educator, helper. Currently building at <a href="https://hapsen.tech" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">Hapsen Tech</a>.
       </p>
       <div class="grid grid-cols-2 gap-4 text-text-muted">
-        <a href="https://github.com/TheBeege" target="_blank" class="hover:text-text transition-colors">GitHub</a>
-        <a href="https://www.linkedin.com/in/thebeege/" target="_blank" class="hover:text-text transition-colors">LinkedIn</a>
-        <a href="https://www.instagram.com/tehbeege" target="_blank" class="hover:text-text transition-colors">Instagram</a>
+        <a href="https://github.com/TheBeege" target="_blank" rel="noopener noreferrer" class="hover:text-text transition-colors">GitHub</a>
+        <a href="https://www.linkedin.com/in/thebeege/" target="_blank" rel="noopener noreferrer" class="hover:text-text transition-colors">LinkedIn</a>
+        <a href="https://www.instagram.com/tehbeege" target="_blank" rel="noopener noreferrer" class="hover:text-text transition-colors">Instagram</a>
         <a href="mailto:bryanberry235711@gmail.com" class="hover:text-text transition-colors">Email</a>
         <a href="tel:+821050555576" class="hover:text-text transition-colors">📞 +82 10-5055-5576</a>
         <a href="tel:+19548507518" class="hover:text-text transition-colors">📞 +1 954-850-7518</a>
-        <a href="https://card.beege.works" target="_blank" class="hover:text-text transition-colors">Business Card</a>
+        <a href="https://card.beege.works" target="_blank" rel="noopener noreferrer" class="hover:text-text transition-colors">Business Card</a>
         <span>KakaoTalk: TheBeege</span>
       </div>
     </div>

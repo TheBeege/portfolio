@@ -5,24 +5,71 @@ import MobileNav from '../components/MobileNav.astro'
 interface Props {
   title: string;
   description?: string;
+  ogImage?: string;
+  url?: string;
 }
 
-const { title, description = "Beege — Engineering Leader, Builder, Community Organizer" } = Astro.props;
+const {
+  title,
+  description = "Beege — Engineering Leader, Builder, Community Organizer",
+  ogImage = "/profile.png",
+  url = "https://portfolio.beege.works",
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, url).href;
 ---
 
 <!doctype html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
+    <meta name="theme-color" content="#0f172a" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="canonical" href={canonicalURL} />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={`${url}${ogImage}`} />
+    <meta property="og:url" content={canonicalURL} />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={`${url}${ogImage}`} />
+
     <title>{title}</title>
+
+    <!-- Structured Data -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Bryan Berry",
+      "url": url,
+      "jobTitle": "Engineering Leader",
+      "sameAs": [
+        "https://github.com/TheBeege",
+        "https://www.linkedin.com/in/thebeege/",
+        "https://www.instagram.com/tehbeege"
+      ],
+      "alumniOf": {
+        "@type": "CollegeOrUniversity",
+        "name": "Georgia Institute of Technology"
+      }
+    })} />
   </head>
   <body class="bg-surface text-text min-h-screen antialiased">
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:bg-primary focus:text-white focus:px-4 focus:py-2 focus:rounded-lg">
+      Skip to main content
+    </a>
+
     <MobileNav />
 
-    <main class="pt-20">
+    <main id="main-content" class="pt-20">
       <slot />
     </main>
 

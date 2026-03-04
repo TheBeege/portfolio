@@ -32,7 +32,7 @@ const { title, company, roles, tags, links, images, highlight, teamSize, company
   {links && links.length > 0 && (
     <div class="flex gap-3 text-sm text-text-muted mb-4">
       {links.map((link) => (
-        <a href={link.url} target="_blank" class="hover:text-primary transition-colors">{link.label} ↗</a>
+        <a href={link.url} target="_blank" rel="noopener noreferrer" class="hover:text-primary transition-colors">{link.label} ↗</a>
       ))}
     </div>
   )}
@@ -53,7 +53,7 @@ const { title, company, roles, tags, links, images, highlight, teamSize, company
   {images && images.length > 0 && (
     <div class="grid md:grid-cols-3 gap-4 mb-6">
       {images.map((img) => (
-        <img src={img.src} alt={img.alt} class="rounded-lg border border-white/10 w-full" />
+        <img src={img.src} alt={img.alt} width={600} height={400} loading="lazy" decoding="async" class="rounded-lg border border-white/10 w-full" />
       ))}
     </div>
   )}
