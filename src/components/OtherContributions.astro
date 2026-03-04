@@ -1,0 +1,38 @@
+---
+interface Entry {
+  title: string;
+  company: string;
+  role: string;
+  summary: string;
+  tags: string[];
+}
+
+interface Props {
+  entries: Entry[];
+}
+
+const { entries } = Astro.props;
+---
+
+<div class="bg-surface-light rounded-xl p-8 border border-white/10">
+  <h3 class="text-2xl font-semibold mb-6">Other Contributions</h3>
+  <div class="divide-y divide-white/10">
+    {entries.map((entry) => (
+      <div class="py-4 first:pt-0 last:pb-0">
+        <div class="flex flex-col md:flex-row md:items-baseline md:justify-between gap-1 mb-1">
+          <div class="flex flex-wrap items-baseline gap-x-2">
+            <span class="font-medium text-text">{entry.title}</span>
+            <span class="text-sm text-text-muted">@ {entry.company}</span>
+            <span class="text-xs text-text-muted italic">— {entry.role}</span>
+          </div>
+          <div class="flex flex-wrap gap-1.5 shrink-0">
+            {entry.tags.map((tag) => (
+              <span class="text-xs bg-primary/20 text-primary px-2 py-0.5 rounded">{tag}</span>
+            ))}
+          </div>
+        </div>
+        <p class="text-sm text-text-muted">{entry.summary}</p>
+      </div>
+    ))}
+  </div>
+</div>

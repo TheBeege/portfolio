@@ -1,6 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Section from '../components/Section.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import OtherContributions from '../components/OtherContributions.astro';
 ---
 
 <Layout title="Beege's Portfolio">
@@ -43,420 +45,153 @@ import Section from '../components/Section.astro';
   <Section id="professional-projects" title="Professional Projects">
     <div class="space-y-16">
 
-      <!-- Data Management System -->
-      <div class="bg-surface-light rounded-xl p-8 border border-white/10">
-        <div class="flex items-start justify-between mb-4">
-          <h3 class="text-2xl font-semibold">Data Management System</h3>
-          <div class="flex gap-3 text-sm text-text-muted">
-            Company: Lunit
-          </div>
-          <div class="flex gap-3 text-sm text-text-muted">
-            Roles: Product Manager, Project Manager
-          </div>
-        </div>
-        <p class="text-text-muted mb-6">
-          Organized and stored extracted DICOM tags, DICOM file references, and clinical study data for use in annotation and ML training. 
-          The system was based on an internally defined, standardized field set and format to be used for each image modality. Fields were
-          selected and scrubbed in order to maintain privacy for regulatory compliance. Data was organized
-          into acquisition projects by vendor, indicating a batch of data that was received. This was critical, as data acquisition projects represented
-          clinical significance beyond what could be found in the DICOM tags and clinical study data. Data stewards could specify aliases for manufacturers and devices
-          in order to handle ambiguity between different DICOM information (e.g. Fujifilm vs Fujifilm Inc). ML researchers could define splits within the tool,
-          specifying which images were used for which purpose (e.g. training, tuning, validation). Splits were versioned, and data in splits was preserved despite 
-          future clean-up, in order to ensure reproducibility for EU AI Act compliance. Clocked 300 transactions per second after we set up monitoring for the first time.
-        </p>
-        <div class="flex flex-wrap gap-2">
-          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">PostgreSQL</span>
-          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Python</span>
-          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">DICOM</span>
-          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Github Actions</span>
-          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Google Cloud Platform</span>
-          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Hashicorp Terraform</span>
-          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Kubernetes</span>
-          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Scrum</span>
-          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Agile Development</span>
-        </div>
-      </div>
+      <ProjectCard
+        title="Data Management System"
+        company="Lunit"
+        roles={["Product Manager", "Project Manager"]}
+        teamSize="6"
+        highlight="300 TPS sustained in production"
+        tags={["PostgreSQL", "Python", "DICOM", "Github Actions", "Google Cloud Platform", "Hashicorp Terraform", "Kubernetes", "Scrum", "Agile Development"]}
+      >
+        <p>Centralized system for organizing DICOM metadata, file references, and clinical study data — the first successful effort to get all the data in one place for annotation and ML training. Ideated the original system and led product management, delivering features including manufacturer aliasing, acquisition project tracking, and versioned ML splits for EU AI Act reproducibility. Centralized ingestion also uncovered and resolved data quality and duplication issues.</p>
+      </ProjectCard>
 
-      <!-- Data Pipeline Platform -->
-      <div class="bg-surface-light rounded-xl p-8 border border-white/10">
-        <div class="flex items-start justify-between mb-4">
-          <h3 class="text-2xl font-semibold">Data Pipeline Platform</h3>
-          <div class="flex gap-3 text-sm text-text-muted">
-            Company: Lunit
-          </div>
-          <div class="flex gap-3 text-sm text-text-muted">
-            Roles: Project Manager
-          </div>
-        </div>
-        <p class="text-text-muted mb-6">
-          Massively concurrent data processing pipeline for external data ingestion, annotation data preparation, training data preparation, and
-          bulk inference on images using in-house AI models.
-          Radiology data engineers used the tool to extract pixel data and tag data from DICOM files. Oncology data engineers used the tool to
-          generate thumbnails from whole slide images (WSIs) for display in web views. Data engineers would ingest the extracted data into the
-          Data Management System, which would then allow the data to be used for annotation and training. The system would routinely process
-          hundreds of terabytes of data, scaling accordingly. The system used spot instances and fine-tuned autoscaling behaviors to minimize cost.
-          Reduced example inference task from 2 months to less than 24 hours.
-        </p>
-        <div class="flex flex-wrap gap-2">
-          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">PostgreSQL</span>
-          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Python</span>
-          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Prefect</span>
-          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">DICOM</span>
-          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Github Actions</span>
-          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Google Cloud Platform</span>
-          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Hashicorp Terraform</span>
-          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Kubernetes</span>
-          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Scrum</span>
-          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Agile Development</span>
-        </div>
-      </div>
+      <ProjectCard
+        title="Data Pipeline Platform"
+        company="Lunit"
+        roles={["Project Manager"]}
+        teamSize="6 data engineers"
+        highlight="Reduced one inference task from 2 months to under 24 hours"
+        tags={["PostgreSQL", "Python", "Prefect", "DICOM", "Github Actions", "Google Cloud Platform", "Hashicorp Terraform", "Kubernetes", "Scrum", "Agile Development"]}
+      >
+        <p>Massively concurrent pipeline for ingesting medical imaging data, preparing annotation datasets, and running bulk inference with in-house AI models. Conceived the original idea and built the proof of concept using Prefect before handing off to the team. Routinely processed hundreds of terabytes using spot instances and tuned autoscaling.</p>
+      </ProjectCard>
 
-      <!-- Oncology Annotation Tool -->
-      <div class="bg-surface-light rounded-xl p-8 border border-white/10">
-        <div class="flex items-start justify-between mb-4">
-          <h3 class="text-2xl font-semibold">Oncology Annotation Tool</h3>
-          <div class="flex gap-3 text-sm text-text-muted">
-            Company: Lunit
-          </div>
-          <div class="flex gap-3 text-sm text-text-muted">
-            Roles: Product Manager, Project Manager, DevOps Engineer, Engineering Manager
-          </div>
-        </div>
-        <p class="text-text-muted mb-6">
-          An internal tool for oncologists to label cells in pathology slides. Oncologists could specify an area of the whole slide image (WSI) for annotation.
-          These annotation areas would then be assigned a label set for future labeling, then entered into a queue. Oncologists would then annotate WSI areas in their queue
-          by either painting tissue areas, designating points, or drawing contours around cells. Oncologists could zoom in and out deeply on huge WSI images, either to 
-          get the context of the broader tissue sample or to see minute details. Nearly every function provided a keyboard shortcut, as annotation speed was critical for cost management.
-          The tool supported external, contracted oncology teams accessing the tool, along with external manager permissions scheme and access. Internal radiologists could review
-          and give feedback on annotation work. The tool also provided an API to allow machine learning researchers to pull the data to run their training.
-        </p>
-        <div class="flex flex-wrap gap-2">
-          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">PostgreSQL</span>
-          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Python</span>
-          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Django</span>
-          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">MessagePack</span>
-          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">WebGL</span>
-          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Github Actions</span>
-          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Google Cloud Platform</span>
-          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Hashicorp Terraform</span>
-          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Kubernetes</span>
-          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Scrum</span>
-          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Agile Development</span>
-        </div>
-      </div>
+      <ProjectCard
+        title="Oncology Annotation Tool"
+        company="Lunit"
+        roles={["Product Manager", "Project Manager", "DevOps Engineer", "Engineering Manager"]}
+        teamSize="7"
+        tags={["PostgreSQL", "Python", "Django", "MessagePack", "WebGL", "Github Actions", "Google Cloud Platform", "Hashicorp Terraform", "Kubernetes", "Scrum", "Agile Development"]}
+      >
+        <p>Internal tool for oncologists to label pathology whole slide images for cancer detection AI training, supporting distinct annotation modes — painting tissue areas, designating points, drawing cell contours, and sub-cellular labeling — on deeply zoomable WSIs. External contractor access with manager permissions enabled Lunit to scale annotation beyond its internal team.</p>
+      </ProjectCard>
 
-      <!-- Radiology Annotation Tool -->
-      <div class="bg-surface-light rounded-xl p-8 border border-white/10">
-        <div class="flex items-start justify-between mb-4">
-          <h3 class="text-2xl font-semibold">Radiology Annotation Tool</h3>
-          <div class="flex gap-3 text-sm text-text-muted">
-            Company: Lunit
-          </div>
-          <div class="flex gap-3 text-sm text-text-muted">
-            Roles: Product Manager, Project Manager, DevOps Engineer, Backend Engineer, Engineering Manager
-          </div>
-        </div>
-        <p class="text-text-muted mb-6">
-          An internal tool for radiologists to label medical images. Radiologists would be assigned an annotation project, where they could either work through a queue 
-          or have a pre-assigned pool of images to annotate. Radiologists could manipulate images by zooming, panning, adjusting brightness, adjusting contrast, inverting
-          the light in the image, and flipping the image horizontally. Nearly every function provided a keyboard shortcut, as annotation speed was critical for cost management.
-          The tool supported chest X-rays (CXR), mammograms (MMG), and digital breast tomosynthesis (DBT) images. Radiologists could annotate with polygons, line contours, or points.
-          In the case of MMG and DBT images, radiologists could group annotations across images in order to indicate that they represented the same physical object, enforcing
-          consistent labels across the annotations. The tool supported multi-window annotation for handling current-prior comparison annotation - that is, annotating a 
-          previous medical study and a current medical study concurrently.
-          Annotation project managers could specify reviewers, where reviewers could start threads to discuss annotations and provide feedback.
-          The tool provided an API to allow machine learning researchers to pull the data to run their training. Once I became product manager and engineering manager of the tool
-          and made some progress, radiologists lauded the improvements, saying "this is the smoothest annotation has ever gone."
-        </p>
-        <div class="flex flex-wrap gap-2">
-          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">MongoDB</span>
-          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Python</span>
-          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">FastAPI</span>
-          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">DICOM</span>
-          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Cornerstone</span>
-          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Github Actions</span>
-          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Amazon Web Services</span>
-          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Google Cloud Platform</span>
-          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Hashicorp Terraform</span>
-          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Kubernetes</span>
-          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Scrum</span>
-          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Agile Development</span>
-        </div>
-      </div>
+      <ProjectCard
+        title="Radiology Annotation Tool"
+        company="Lunit"
+        roles={["Product Manager", "Project Manager", "DevOps Engineer", "Backend Engineer", "Engineering Manager"]}
+        teamSize="6"
+        highlight="&ldquo;This is the smoothest annotation has ever gone.&rdquo;"
+        tags={["MongoDB", "Python", "FastAPI", "DICOM", "Cornerstone", "Github Actions", "Amazon Web Services", "Google Cloud Platform", "Hashicorp Terraform", "Kubernetes", "Scrum", "Agile Development"]}
+      >
+        <p>Internal tool for radiologists to label medical images across chest X-rays, mammograms, and digital breast tomosynthesis, with queue-based and pool-based assignment and keyboard-shortcut-driven annotation. Took over as product manager and engineering manager. Introduced DBT modality support, multi-window current-prior comparison, cross-image annotation grouping, a reviewer feedback system, and an ML researcher API.</p>
+      </ProjectCard>
 
-      <!-- Command and Control System -->
-      <div class="bg-surface-light rounded-xl p-8 border border-white/10">
-        <div class="flex items-start justify-between mb-4">
-          <h3 class="text-2xl font-semibold">Command and Control System</h3>
-          <div class="flex gap-3 text-sm text-text-muted">
-            Company: Posicube
-          </div>
-          <div class="flex gap-3 text-sm text-text-muted">
-            Roles: Backend Engineer, Engineering Manager
-          </div>
-        </div>
-        <p class="text-text-muted mb-6">
-          An internal tool for managing hosts and services deployed at clients' sites. Used web sockets over TLS for managing communication between the central
-          node and edge nodes. Web sockets for remote communication were used in order to handle constraints imposed by client firewalls and to allow real-time control.
-          Remote functions were defined explicitly in order to pass audits. Central node also acted as a monitoring system for edge nodes.
-          Supported relay nodes between central and edge nodes in order to accommodate network segmentation by clients.
-        </p>
-        <div class="flex flex-wrap gap-2">
-          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Golang</span>
-          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Web Sockets</span>
-          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Gitlab CI</span>
-          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">On-Premise</span>
-          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Amazon Web Services</span>
-          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Hashicorp Terraform</span>
-          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Agile Development</span>
-        </div>
-      </div>
+      <ProjectCard
+        title="Command and Control System"
+        company="Posicube"
+        companyContext="Small startup (9–20 employees)"
+        roles={["Backend Engineer", "Engineering Manager"]}
+        tags={["Golang", "Web Sockets", "Gitlab CI", "On-Premise", "Amazon Web Services", "Hashicorp Terraform", "Agile Development"]}
+      >
+        <p>Remote management system for monitoring and controlling edge devices deployed at client sites. Built WebSocket-over-TLS communication between central and edge nodes, with relay node support for client network segmentation. All remote functions explicitly defined to pass security audits.</p>
+      </ProjectCard>
 
-      <!-- Robi Backend -->
-      <div class="bg-surface-light rounded-xl p-8 border border-white/10">
-        <div class="flex items-start justify-between mb-4">
-          <h3 class="text-2xl font-semibold">Robi Backend (now robi T)</h3>
-          <div class="flex gap-3 text-sm text-text-muted">
-            Company: Posicube
-          </div>
-          <div class="flex gap-3 text-sm text-text-muted">
-            Roles: Backend Engineer, Engineering Manager
-          </div>
-        </div>
-        <p class="text-text-muted mb-6">
-          API server for taking audio data from edge nodes, applying business logic, and relaying instructions via Google DialogFlow. Used monorepo composed
-          of six different microservices, controlled by feature flags.
-        </p>
-        <div class="flex flex-wrap gap-2">
-          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Javascript</span>
-          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">NodeJS</span>
-          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Firestore</span>
-          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Google DialogFlow</span>
-          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Google Cloud Platform</span>
-          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Amazon Web Services</span>
-          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Hashicorp Consul</span>
-          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Docker Swarm</span>
-          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Kubernetes</span>
-          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Hashicorp Terraform</span>
-          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">ElasticSearch</span>
-          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Kibana</span>
-          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">DataDog</span>
-          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Gitlab CI</span>
-          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Agile Development</span>
-        </div>
-      </div>
+      <ProjectCard
+        title="Robi Backend (now robi T)"
+        company="Posicube"
+        companyContext="Small startup (9–20 employees)"
+        roles={["Backend Engineer", "Engineering Manager"]}
+        tags={["Javascript", "NodeJS", "Firestore", "Google DialogFlow", "Google Cloud Platform", "Amazon Web Services", "Hashicorp Consul", "Docker Swarm", "Kubernetes", "Hashicorp Terraform", "ElasticSearch", "Kibana", "DataDog", "Gitlab CI", "Agile Development"]}
+      >
+        <p>Backend for Robi, an AI-powered phone receptionist that routes callers to appropriate departments via Google DialogFlow for speech recognition, intent detection, and TTS. Architected the backend as a monorepo of six microservices controlled by feature flags.</p>
+      </ProjectCard>
 
-      <!-- Wordpress Deployment -->
-      <div class="bg-surface-light rounded-xl p-8 border border-white/10">
-        <div class="flex items-start justify-between mb-4">
-          <h3 class="text-2xl font-semibold">Wordpress Deployment</h3>
-          <div class="flex gap-3 text-sm text-text-muted">
-            Company: PUBG Corporation
-          </div>
-          <div class="flex gap-3 text-sm text-text-muted">
-            Roles: DevOps Engineer
-          </div>
-        </div>
-        <p class="text-text-muted mb-6">
-          Deployed Wordpress to replace the company home page.
-        </p>
-        <div class="flex flex-wrap gap-2">
-          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Amazon Web Services</span>
-          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Hashicorp Terraform</span>
-        </div>
-      </div>
+      <ProjectCard
+        title="Car Rental Service"
+        company="SK TechX (SK Telecom)"
+        roles={["Backend Engineer"]}
+        tags={["Java", "Spring Boot", "Maven", "BitBucket"]}
+      >
+        <p>Service enabling users to reserve and autonomously access rental cars without human intervention. Developed backend reservation and vehicle access APIs as part of an 8-service Spring Boot platform.</p>
+      </ProjectCard>
 
-      <!-- Car Rental Service -->
-      <div class="bg-surface-light rounded-xl p-8 border border-white/10">
-        <div class="flex items-start justify-between mb-4">
-          <h3 class="text-2xl font-semibold">Car Rental Service</h3>
-          <div class="flex gap-3 text-sm text-text-muted">
-            Company: SK TechX (SK Telecom)
-          </div>
-          <div class="flex gap-3 text-sm text-text-muted">
-            Roles: Backend Engineer
-          </div>
-        </div>
-        <p class="text-text-muted mb-6">
-          Service to allow users to reserve car rentals and autonomously enable users to access the car without human intervention.
-        </p>
-        <div class="flex flex-wrap gap-2">
-          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Java</span>
-          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Spring Boot</span>
-          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Maven</span>
-          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">BitBucket</span>
-        </div>
-      </div>
+      <ProjectCard
+        title="Network Player Impact Report"
+        company="Riot Games"
+        roles={["Data Analyst"]}
+        highlight="Wired players showed a statistically significant 1% win-rate increase after normalizing for all identifiable factors"
+        tags={["Tableau", "Hadoop Hive"]}
+      >
+        <p>Team analysis examining whether League of Legends players had a meaningful win-rate change on wired vs. wireless connections. Contributed by querying petabytes of game and infrastructure data from Hadoop Hive; statistical analysis led by teammate. Findings delivered via Tableau dashboards.</p>
+      </ProjectCard>
 
-      <!-- Network Player Impact Report -->
-      <div class="bg-surface-light rounded-xl p-8 border border-white/10">
-        <div class="flex items-start justify-between mb-4">
-          <h3 class="text-2xl font-semibold">Network Player Impact Report</h3>
-          <div class="flex gap-3 text-sm text-text-muted">
-            Company: Riot Games
-          </div>
-          <div class="flex gap-3 text-sm text-text-muted">
-            Roles: Data Analyst
-          </div>
-        </div>
-        <p class="text-text-muted mb-6">
-          Report using petabytes of game and infrastructure data to analyze if players had a meaningful win percentage increase when playing on a wired
-          connection versus wireless connection.
-        </p>
-        <div class="flex flex-wrap gap-2">
-          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Tableau</span>
-          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Hadoop Hive</span>
-        </div>
-      </div>
+      <ProjectCard
+        title="Near Real-Time Service Monitoring"
+        company="Riot Games"
+        roles={["Data Engineer"]}
+        tags={["Bash", "Python", "MySQL", "JMX"]}
+      >
+        <p>Minute-resolution metrics collection system feeding game server health data to the Network Operations Center. Built collectors for server availability, login queue size, and concurrent players across global infrastructure.</p>
+      </ProjectCard>
 
-      <!-- Near Real-Time Service Monitoring -->
-      <div class="bg-surface-light rounded-xl p-8 border border-white/10">
-        <div class="flex items-start justify-between mb-4">
-          <h3 class="text-2xl font-semibold">Near Real-Time Service Monitoring</h3>
-          <div class="flex gap-3 text-sm text-text-muted">
-            Company: Riot Games
-          </div>
-          <div class="flex gap-3 text-sm text-text-muted">
-            Roles: Data Engineer
-          </div>
-        </div>
-        <p class="text-text-muted mb-6">
-          System to collect minute-resolution metrics from game server and auxiliary service infrastructure, including metrics like game server availability,
-          login queue size, and total concurrent players, and display these metrics to the Network Operations Center (NOC). 
-        </p>
-        <div class="flex flex-wrap gap-2">
-          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Bash</span>
-          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Python</span>
-          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">MySQL</span>
-          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">JMX</span>
-        </div>
-      </div>
+      <ProjectCard
+        title="Splunk Expansion"
+        company="Asurion"
+        roles={["Monitoring Engineer"]}
+        highlight="Reduced incident isolation time by 80%"
+        tags={["Splunk", "Python"]}
+      >
+        <p>Expanded Splunk from an unmaintained audit tool into a core component of company-wide monitoring. Deployed across all infrastructure and worked with Splunk professional services to build operational dashboards.</p>
+      </ProjectCard>
 
-      <!-- Nagios Management and Expansion -->
-      <div class="bg-surface-light rounded-xl p-8 border border-white/10">
-        <div class="flex items-start justify-between mb-4">
-          <h3 class="text-2xl font-semibold">Nagios Management and Expansion</h3>
-          <div class="flex gap-3 text-sm text-text-muted">
-            Company: Asurion Mobile Applications
-          </div>
-          <div class="flex gap-3 text-sm text-text-muted">
-            Roles: Monitoring Engineer
-          </div>
-        </div>
-        <p class="text-text-muted mb-6">
-          Expanded Nagios metrics to improve monitoring and enable more meaningful, fine-grained alerting in order to reduce noise.
-        </p>
-        <div class="flex flex-wrap gap-2">
-          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Nagios</span>
-          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Python</span>
-        </div>
-      </div>
+      <ProjectCard
+        title="ETL Operations"
+        company="Asurion"
+        roles={["ETL Operations Engineer"]}
+        tags={["SSIS", "Microsoft SQL Server", "PHP"]}
+      >
+        <p>Administered and developed a homebrewed SSIS-based ETL framework running 600+ active jobs for insurance claims processing. Managed critical workflows for customer data acquisition, claims, and fulfillment. Built a knowledge management system and helped manage an offshore team in India.</p>
+      </ProjectCard>
 
-      <!-- Splunk Deployment -->
-      <div class="bg-surface-light rounded-xl p-8 border border-white/10">
-        <div class="flex items-start justify-between mb-4">
-          <h3 class="text-2xl font-semibold">Splunk Deployment</h3>
-          <div class="flex gap-3 text-sm text-text-muted">
-            Company: Asurion Mobile Applications
-          </div>
-          <div class="flex gap-3 text-sm text-text-muted">
-            Roles: Monitoring Engineer
-          </div>
-        </div>
-        <p class="text-text-muted mb-6">
-          Implemented green-field deployment of Splunk, aggregating all server logs, extracting metrics from logs, building alerts, and building dashboards in order to 
-          reduce mean time to resolution (MTR) and increase success chance of root cause analysis (RCA).
-        </p>
-        <div class="flex flex-wrap gap-2">
-          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Splunk</span>
-          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Python</span>
-        </div>
-      </div>
-
-      <!-- Build System Prototype -->
-      <div class="bg-surface-light rounded-xl p-8 border border-white/10">
-        <div class="flex items-start justify-between mb-4">
-          <h3 class="text-2xl font-semibold">Build System Prototype</h3>
-          <div class="flex gap-3 text-sm text-text-muted">
-            Company: Asurion Mobile Applications
-          </div>
-          <div class="flex gap-3 text-sm text-text-muted">
-            Roles: Monitoring Engineer
-          </div>
-        </div>
-        <p class="text-text-muted mb-6">
-          Prototyped upgrade of the build system, migrating from legacy Perl system to Ruby on Rails. Deployed after my departure.
-        </p>
-        <div class="flex flex-wrap gap-2">
-          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Ruby</span>
-          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Ruby on Rails</span>
-        </div>
-      </div>
-
-      <!-- Splunk Expansion -->
-      <div class="bg-surface-light rounded-xl p-8 border border-white/10">
-        <div class="flex items-start justify-between mb-4">
-          <h3 class="text-2xl font-semibold">Splunk Expansion</h3>
-          <div class="flex gap-3 text-sm text-text-muted">
-            Company: Asurion
-          </div>
-          <div class="flex gap-3 text-sm text-text-muted">
-            Roles: Monitoring Engineer
-          </div>
-        </div>
-        <p class="text-text-muted mb-6">
-          Expanded Splunk from an unmaintained audit fulfillment tool to a core component of company monitoring systems. Deployed Splunk to all company infrastructure 
-          rather than a core security subset. Worked with Splunk professional services to extract meaningful metrics from logs and build dashboards to provide key
-          monitoring data. Reduced isolation time of incidents by 80%.
-        </p>
-        <div class="flex flex-wrap gap-2">
-          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Splunk</span>
-          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Python</span>
-        </div>
-      </div>
-
-      <!-- ETL Operations -->
-      <div class="bg-surface-light rounded-xl p-8 border border-white/10">
-        <div class="flex items-start justify-between mb-4">
-          <h3 class="text-2xl font-semibold">ETL Operations</h3>
-          <div class="flex gap-3 text-sm text-text-muted">
-            Company: Asurion
-          </div>
-          <div class="flex gap-3 text-sm text-text-muted">
-            Roles: ETL Operations Engineer
-          </div>
-        </div>
-        <p class="text-text-muted mb-6">
-          Administered, supported, and developed homebrewed SSIS-based ETL framework consisting of over 600 active jobs. Managed critical ETL workflows for jobs
-          like new customer data acquisition from partners, new claims, and claim fulfillment. Worked on knowledge management system to more quickly identify solutions
-          to previously encountered problems. Helped manage offshore team based in India, including onboarding and training.
-        </p>
-        <div class="flex flex-wrap gap-2">
-          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">SSIS</span>
-          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Microsoft SQL Server</span>
-          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">PHP</span>
-        </div>
-      </div>
-
-      <!-- Single Pane of Glass Project -->
-      <div class="bg-surface-light rounded-xl p-8 border border-white/10">
-        <div class="flex items-start justify-between mb-4">
-          <h3 class="text-2xl font-semibold">Single Pane of Glass Project</h3>
-          <div class="flex gap-3 text-sm text-text-muted">
-            Company: Asurion
-          </div>
-          <div class="flex gap-3 text-sm text-text-muted">
-            Roles: Monitoring Engineer
-          </div>
-        </div>
-        <p class="text-text-muted mb-6">
-          Deployed CA Spectrum and CA eHealth to support the overhaul of the network operations center (NOC) in collaboration with CA professional services.
-        </p>
-        <div class="flex flex-wrap gap-2">
-          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">CA Spectrum</span>
-          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">CA eHealth</span>
-        </div>
-      </div>
+      <OtherContributions entries={[
+        {
+          title: "Wordpress Deployment",
+          company: "PUBG",
+          role: "DevOps",
+          summary: "Deployed Wordpress on AWS via Terraform to replace the company home page.",
+          tags: ["AWS", "Terraform"]
+        },
+        {
+          title: "Nagios Expansion",
+          company: "Asurion Mobile Apps",
+          role: "Monitoring",
+          summary: "Expanded Nagios metrics and refined alerting to reduce noise.",
+          tags: ["Nagios", "Python"]
+        },
+        {
+          title: "Splunk Deployment",
+          company: "Asurion Mobile Apps",
+          role: "Monitoring",
+          summary: "Green-field Splunk deployment with log aggregation, metric extraction, and dashboards.",
+          tags: ["Splunk", "Python"]
+        },
+        {
+          title: "Build System Prototype",
+          company: "Asurion Mobile Apps",
+          role: "Monitoring",
+          summary: "Prototyped build system migration from legacy Perl to Ruby on Rails; deployed after departure.",
+          tags: ["Ruby", "Rails"]
+        },
+        {
+          title: "Single Pane of Glass",
+          company: "Asurion",
+          role: "Monitoring",
+          summary: "Deployed CA Spectrum and CA eHealth to overhaul the NOC with CA professional services.",
+          tags: ["CA Spectrum", "CA eHealth"]
+        }
+      ]} />
 
     </div>
   </Section>
@@ -465,97 +200,48 @@ import Section from '../components/Section.astro';
   <Section id="personal-projects" title="Personal Projects">
     <div class="space-y-16">
 
-      <!-- VizPlan -->
-      <div class="bg-surface-light rounded-xl p-8 border border-white/10">
-        <div class="flex items-start justify-between mb-4">
-          <h3 class="text-2xl font-semibold">VizPlan</h3>
-          <div class="flex gap-3 text-sm text-text-muted">
-            <a href="https://vizplan.app" target="_blank" class="hover:text-primary transition-colors">Live ↗</a>
-          </div>
-        </div>
-        <p class="text-text-muted mb-6">
-          A SaaS tool for leaders to visualize alignment between company goals and the work teams are actually doing, identify bottlenecks and risks, and manage workload capacity. Connects to project management tools (Jira, Linear, etc.) and surfaces where planned work drifts from strategic objectives — giving leaders real visibility without micromanaging. Designed with a bidirectional sync strategy to meet teams where they already work.
-        </p>
-        <div class="grid md:grid-cols-3 gap-4 mb-6">
-          <img src="/vizplan1.png" alt="VizPlan landing page showing 'Plan Your Work From Vision to Action' headline with an isometric node visualization" class="rounded-lg border border-white/10 w-full" />
-          <img src="/vizplan2.png" alt="VizPlan hierarchical tree view with nested task cards showing priority levels and roll-up progress" class="rounded-lg border border-white/10 w-full" />
-          <img src="/vizplan3.png" alt="VizPlan team settings page showing member management and API key configuration" class="rounded-lg border border-white/10 w-full" />
-        </div>
-        <div class="flex flex-wrap gap-2">
-          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Next.js</span>
-          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">TypeScript</span>
-          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Supabase</span>
-          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">SaaS</span>
-          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Model-Context Protocol</span>
-          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">PostgreSQL</span>
-        </div>
-      </div>
+      <ProjectCard
+        title="VizPlan"
+        links={[{ label: "Live", url: "https://vizplan.app" }]}
+        images={[
+          { src: "/vizplan1.png", alt: "VizPlan landing page showing 'Plan Your Work From Vision to Action' headline with an isometric node visualization" },
+          { src: "/vizplan2.png", alt: "VizPlan hierarchical tree view with nested task cards showing priority levels and roll-up progress" },
+          { src: "/vizplan3.png", alt: "VizPlan team settings page showing member management and API key configuration" }
+        ]}
+        tags={["Next.js", "TypeScript", "Supabase", "SaaS", "Model-Context Protocol", "PostgreSQL"]}
+      >
+        <p>A SaaS tool for leaders to visualize alignment between company goals and the work teams are actually doing, identify bottlenecks and risks, and manage workload capacity. Connects to project management tools (Jira, Linear, etc.) and surfaces where planned work drifts from strategic objectives — giving leaders real visibility without micromanaging. Designed with a bidirectional sync strategy to meet teams where they already work.</p>
+      </ProjectCard>
 
-      <!-- MedDaaS -->
-      <div class="bg-surface-light rounded-xl p-8 border border-white/10">
-        <div class="flex items-start justify-between mb-4">
-          <h3 class="text-2xl font-semibold">MedDaaS</h3>
-          <div class="flex gap-3 text-sm text-text-muted">
-            <a href="https://meddaas.beege.works" target="_blank" class="hover:text-primary transition-colors">Live ↗</a>
-            <a href="https://github.com/CodeSeoul/MedDaaS" target="_blank" class="hover:text-primary transition-colors">GitHub ↗</a>
-          </div>
-        </div>
-        <p class="text-text-muted mb-6">
-          An AI-powered radiology training platform that helps medical students and radiologists sharpen their diagnostic skills. Students write diagnostic reports for chest X-rays, and the system compares them against expert ground truth using multi-step LLM analysis — delivering finding-by-finding scoring, educational feedback, and actionable improvement suggestions in real time via streaming. Built for the Spoon OS hackathon with CodeSeoul.
-        </p>
-        <div class="grid md:grid-cols-3 gap-4 mb-6">
-          <img src="/meddaas1.png" alt="MedDaaS homepage with search bar and progress card showing a score of 62.9/100 with 2 reports completed" class="rounded-lg border border-white/10 w-full" />
-          <img src="/meddaas2.png" alt="MedDaaS reporting interface showing a chest X-ray with brightness and contrast controls alongside a report text editor" class="rounded-lg border border-white/10 w-full" />
-          <img src="/medaas3.png" alt="MedDaaS detailed feedback page with scoring breakdown for similarity, completeness, accuracy, and terminology" class="rounded-lg border border-white/10 w-full" />
-        </div>
-        <div class="flex flex-wrap gap-2">
-          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">FastAPI</span>
-          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Python</span>
-          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">LLM / RAG</span>
-          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">PostgreSQL</span>
-          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">SpoonAI SDK</span>
-        </div>
-      </div>
+      <ProjectCard
+        title="MedDaaS"
+        links={[
+          { label: "Live", url: "https://meddaas.beege.works" },
+          { label: "GitHub", url: "https://github.com/CodeSeoul/MedDaaS" }
+        ]}
+        images={[
+          { src: "/meddaas1.png", alt: "MedDaaS homepage with search bar and progress card showing a score of 62.9/100 with 2 reports completed" },
+          { src: "/meddaas2.png", alt: "MedDaaS reporting interface showing a chest X-ray with brightness and contrast controls alongside a report text editor" },
+          { src: "/medaas3.png", alt: "MedDaaS detailed feedback page with scoring breakdown for similarity, completeness, accuracy, and terminology" }
+        ]}
+        tags={["FastAPI", "Python", "LLM / RAG", "PostgreSQL", "SpoonAI SDK"]}
+      >
+        <p>An AI-powered radiology training platform that helps medical students and radiologists sharpen their diagnostic skills. Students write diagnostic reports for chest X-rays, and the system compares them against expert ground truth using multi-step LLM analysis — delivering finding-by-finding scoring, educational feedback, and actionable improvement suggestions in real time via streaming. Built for the Spoon OS hackathon with CodeSeoul.</p>
+      </ProjectCard>
 
-      <!-- Model Server -->
-      <div class="bg-surface-light rounded-xl p-8 border border-white/10">
-        <div class="flex items-start justify-between mb-4">
-          <h3 class="text-2xl font-semibold">AI Fix Assist</h3>
-          <div class="flex gap-3 text-sm text-text-muted">
-            <!-- TODO: add GitHub link once repo is identified -->
-          </div>
-        </div>
-        <p class="text-text-muted mb-6">
-          A web app for assisting medical imaging device technicians in China. Designed to run models like Qwen on local infrastructure or with remote models like Claude. Uses agent tools to lookup repair guidance documentation via RAG and web search.
-        </p>
-        <div class="flex flex-wrap gap-2">
-          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Python</span>
-          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">LLM Inference</span>
-          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Medical AI</span>
-          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Self-Hosted</span>
-          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Agent Tooling</span>
-          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">RAG</span>
-          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">PGVector</span>
-        </div>
-      </div>
+      <ProjectCard
+        title="AI Fix Assist"
+        tags={["Python", "LLM Inference", "Medical AI", "Self-Hosted", "Agent Tooling", "RAG", "PGVector"]}
+      >
+        <p>A web app for assisting medical imaging device technicians in China. Designed to run models like Qwen on local infrastructure or with remote models like Claude. Uses agent tools to lookup repair guidance documentation via RAG and web search.</p>
+      </ProjectCard>
 
-      <!-- Monster Brawl -->
-      <div class="bg-surface-light rounded-xl p-8 border border-white/10">
-        <div class="flex items-start justify-between mb-4">
-          <h3 class="text-2xl font-semibold">Monster Brawl</h3>
-          <div class="flex gap-3 text-sm text-text-muted">
-          </div>
-        </div>
-        <p class="text-text-muted mb-6">
-          Turn-based battle game where players would pit classic monsters against each other. Included account management, matchmaking, gameplay, and stats. Never released.
-        </p>
-        <div class="flex flex-wrap gap-2">
-          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Lua</span>
-          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">CoronaSDK</span>
-          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Python</span>
-          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Twisted Matrix</span>
-        </div>
-      </div>
+      <ProjectCard
+        title="Monster Brawl"
+        tags={["Lua", "CoronaSDK", "Python", "Twisted Matrix"]}
+      >
+        <p>Turn-based battle game where players would pit classic monsters against each other. Included account management, matchmaking, gameplay, and stats. Never released.</p>
+      </ProjectCard>
 
     </div>
   </Section>
