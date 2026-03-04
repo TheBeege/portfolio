@@ -62,7 +62,7 @@ import Section from '../components/Section.astro';
           clinical significance beyond what could be found in the DICOM tags and clinical study data. Data stewards could specify aliases for manufacturers and devices
           in order to handle ambiguity between different DICOM information (e.g. Fujifilm vs Fujifilm Inc). ML researchers could define splits within the tool,
           specifying which images were used for which purpose (e.g. training, tuning, validation). Splits were versioned, and data in splits was preserved despite 
-          future clean-up, in order to ensure reproducibility for EU AI Act compliance.
+          future clean-up, in order to ensure reproducibility for EU AI Act compliance. Clocked 300 transactions per second after we set up monitoring for the first time.
         </p>
         <div class="flex flex-wrap gap-2">
           <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">PostgreSQL</span>
@@ -94,6 +94,7 @@ import Section from '../components/Section.astro';
           generate thumbnails from whole slide images (WSIs) for display in web views. Data engineers would ingest the extracted data into the
           Data Management System, which would then allow the data to be used for annotation and training. The system would routinely process
           hundreds of terabytes of data, scaling accordingly. The system used spot instances and fine-tuned autoscaling behaviors to minimize cost.
+          Reduced example inference task from 2 months to less than 24 hours.
         </p>
         <div class="flex flex-wrap gap-2">
           <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">PostgreSQL</span>
