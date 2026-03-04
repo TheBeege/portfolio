@@ -9,7 +9,7 @@ import Section from '../components/Section.astro';
     <div class="max-w-5xl mx-auto px-6">
       <p class="text-primary font-mono mb-4">Hi, I'm</p>
       <h1 class="text-5xl md:text-7xl font-bold mb-4">Beege!</h1>
-      <p class="text-primary mb-4">Or Bryan Berry if you want to be boring and legal</p>
+      <p class="text-text-muted mb-4">Or Bryan Berry if you want to be boring and legal</p>
       <p class="text-xl md:text-2xl text-text-muted max-w-2xl mb-8">
         Engineering leader, builder, and community organizer based in Seoul.
       </p>
@@ -38,6 +38,146 @@ import Section from '../components/Section.astro';
       </p>
     </div>
   </Section>
+
+  <!-- Professional Projects -->
+  <Section id="professional-projects" title="Professional Projects">
+    <div class="space-y-16">
+
+      <!-- Data Management System -->
+      <div class="bg-surface-light rounded-xl p-8 border border-white/10">
+        <div class="flex items-start justify-between mb-4">
+          <h3 class="text-2xl font-semibold">Data Management System</h3>
+          <div class="flex gap-3 text-sm text-text-muted">
+            Company: Lunit
+          </div>
+          <div class="flex gap-3 text-sm text-text-muted">
+            Roles: Product Manager, Project Manager
+          </div>
+        </div>
+        <p class="text-text-muted mb-6">
+          Organized and stored extracted DICOM tags, DICOM file references, and clinical study data for use in annotation and ML training. 
+          The system was based on an internally defined, standardized field set and format to be used for each image modality. Fields were
+          selected and scrubbed in order to maintain privacy for regulatory compliance. Data was organized
+          into acquisition projects by vendor, indicating a batch of data that was received. This was critical, as data acquisition projects represented
+          clinical significance beyond what could be found in the DICOM tags and clinical study data. Data stewards could specify aliases for manufacturers and devices
+          in order to handle ambiguity between different DICOM information (e.g. Fujifilm vs Fujifilm Inc). ML researchers could define splits within the tool,
+          specifying which images were used for which purpose (e.g. training, tuning, validation). Splits were versioned, and data in splits was preserved despite 
+          future clean-up, in order to ensure reproducibility for EU AI Act compliance.
+        </p>
+        <div class="flex flex-wrap gap-2">
+          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">PostgreSQL</span>
+          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Python</span>
+          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">DICOM</span>
+          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Github Actions</span>
+          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Google Cloud Platform</span>
+          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Kubernetes</span>
+          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Scrum</span>
+          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Agile Development</span>
+        </div>
+      </div>
+
+      <!-- Data Pipeline Platform -->
+      <div class="bg-surface-light rounded-xl p-8 border border-white/10">
+        <div class="flex items-start justify-between mb-4">
+          <h3 class="text-2xl font-semibold">Data Pipeline Platform</h3>
+          <div class="flex gap-3 text-sm text-text-muted">
+            Company: Lunit
+          </div>
+          <div class="flex gap-3 text-sm text-text-muted">
+            Roles: Project Manager
+          </div>
+        </div>
+        <p class="text-text-muted mb-6">
+          Massively concurrent data processing pipeline for external data ingestion, annotation data preparation, training data preparation, and
+          bulk inference on images using in-house AI models.
+          Radiology data engineers used the tool to extract pixel data and tag data from DICOM files. Oncology data engineers used the tool to
+          generate thumbnails from whole slide images (WSIs) for display in web views. Data engineers would ingest the extracted data into the
+          Data Management System, which would then allow the data to be used for annotation and training. The system would routinely process
+          hundreds of terabytes of data, scaling accordingly. The system used spot instances and fine-tuned autoscaling behaviors to minimize cost.
+        </p>
+        <div class="flex flex-wrap gap-2">
+          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">PostgreSQL</span>
+          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Python</span>
+          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Prefect</span>
+          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">DICOM</span>
+          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Github Actions</span>
+          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Google Cloud Platform</span>
+          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Kubernetes</span>
+          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Scrum</span>
+          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Agile Development</span>
+        </div>
+      </div>
+
+      <!-- Oncology Annotation Tool -->
+      <div class="bg-surface-light rounded-xl p-8 border border-white/10">
+        <div class="flex items-start justify-between mb-4">
+          <h3 class="text-2xl font-semibold">Oncology Annotation Tool</h3>
+          <div class="flex gap-3 text-sm text-text-muted">
+            Company: Lunit
+          </div>
+          <div class="flex gap-3 text-sm text-text-muted">
+            Roles: Product Manager, Project Manager, DevOps Engineer, Engineering Manager
+          </div>
+        </div>
+        <p class="text-text-muted mb-6">
+          An internal tool for oncologists to label cells in pathology slides. Oncologists could specify an area of the whole slide image (WSI) for annotation.
+          These annotation areas would then be assigned a label set for future labeling, then entered into a queue. Oncologists would then annotate WSI areas in their queue
+          by either painting tissue areas, designating points, or drawing contours around cells. Oncologists could zoom in and out deeply on huge WSI images, either to 
+          get the context of the broader tissue sample or to see minute details. Nearly every function provided a keyboard shortcut, as annotation speed was critical for cost management.
+          The tool supported external, contracted oncology teams accessing the tool, along with external manager permissions scheme and access. Internal radiologists could review
+          and give feedback on annotation work. The tool also provided an API to allow machine learning researchers to pull the data to run their training.
+        </p>
+        <div class="flex flex-wrap gap-2">
+          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">PostgreSQL</span>
+          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Python</span>
+          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Django</span>
+          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">MessagePack</span>
+          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">WebGL</span>
+          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Github Actions</span>
+          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Google Cloud Platform</span>
+          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Kubernetes</span>
+          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Scrum</span>
+          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Agile Development</span>
+        </div>
+      </div>
+
+      <!-- Radiology Annotation Tool -->
+      <div class="bg-surface-light rounded-xl p-8 border border-white/10">
+        <div class="flex items-start justify-between mb-4">
+          <h3 class="text-2xl font-semibold">Radiology Annotation Tool</h3>
+          <div class="flex gap-3 text-sm text-text-muted">
+            Company: Lunit
+          </div>
+          <div class="flex gap-3 text-sm text-text-muted">
+            Roles: Product Manager, Project Manager, DevOps Engineer, Backend Engineer, Engineering Manager
+          </div>
+        </div>
+        <p class="text-text-muted mb-6">
+          An internal tool for radiologists to label medical images. Radiologists would be assigned an annotation project, where they could either work through a queue 
+          or have a pre-assigned pool of images to annotate. Radiologists could manipulate images by zooming, panning, adjusting brightness, adjusting contrast, inverting
+          the light in the image, and flipping the image horizontally. Nearly every function provided a keyboard shortcut, as annotation speed was critical for cost management.
+          The tool supported chest X-rays (CXR), mammograms (MMG), and digital breast tomosynthesis (DBT) images. Radiologists could annotate with polygons, line contours, or points.
+          In the case of MMG and DBT images, radiologists could group annotations across images in order to indicate that they represented the same physical object, enforcing
+          consistent labels across the annotations. The tool supported multi-window annotation for handling current-prior comparison annotation - that is, annotating a 
+          previous medical study and a current medical study concurrently.
+          Annotation project managers could specify reviewers, where reviewers could start threads to discuss annotations and provide feedback.
+          The tool provided an API to allow machine learning researchers to pull the data to run their training. Once I became product manager and engineering manager of the tool
+          and made some progress, radiologists lauded the improvements, saying "this is the smoothest annotation has ever gone."
+        </p>
+        <div class="flex flex-wrap gap-2">
+          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">MongoDB</span>
+          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Python</span>
+          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">FastAPI</span>
+          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">DICOM</span>
+          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Cornerstone</span>
+          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Github Actions</span>
+          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Amazon Web Services</span>
+          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Google Cloud Platform</span>
+          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Kubernetes</span>
+          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Scrum</span>
+          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Agile Development</span>
+        </div>
+      </div>
 
   <!-- Personal Projects -->
   <Section id="personal-projects" title="Personal Projects">
