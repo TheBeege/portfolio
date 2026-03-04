@@ -70,6 +70,7 @@ import Section from '../components/Section.astro';
           <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">DICOM</span>
           <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Github Actions</span>
           <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Google Cloud Platform</span>
+          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Hashicorp Terraform</span>
           <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Kubernetes</span>
           <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Scrum</span>
           <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Agile Development</span>
@@ -103,6 +104,7 @@ import Section from '../components/Section.astro';
           <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">DICOM</span>
           <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Github Actions</span>
           <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Google Cloud Platform</span>
+          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Hashicorp Terraform</span>
           <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Kubernetes</span>
           <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Scrum</span>
           <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Agile Development</span>
@@ -136,6 +138,7 @@ import Section from '../components/Section.astro';
           <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">WebGL</span>
           <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Github Actions</span>
           <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Google Cloud Platform</span>
+          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Hashicorp Terraform</span>
           <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Kubernetes</span>
           <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Scrum</span>
           <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Agile Development</span>
@@ -174,11 +177,313 @@ import Section from '../components/Section.astro';
           <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Github Actions</span>
           <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Amazon Web Services</span>
           <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Google Cloud Platform</span>
+          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Hashicorp Terraform</span>
           <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Kubernetes</span>
           <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Scrum</span>
           <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Agile Development</span>
         </div>
       </div>
+
+      <!-- Command and Control System -->
+      <div class="bg-surface-light rounded-xl p-8 border border-white/10">
+        <div class="flex items-start justify-between mb-4">
+          <h3 class="text-2xl font-semibold">Command and Control System</h3>
+          <div class="flex gap-3 text-sm text-text-muted">
+            Company: Posicube
+          </div>
+          <div class="flex gap-3 text-sm text-text-muted">
+            Roles: Backend Engineer, Engineering Manager
+          </div>
+        </div>
+        <p class="text-text-muted mb-6">
+          An internal tool for managing hosts and services deployed at clients' sites. Used web sockets over TLS for managing communication between the central
+          node and edge nodes. Web sockets for remote communication were used in order to handle constraints imposed by client firewalls and to allow real-time control.
+          Remote functions were defined explicitly in order to pass audits. Central node also acted as a monitoring system for edge nodes.
+          Supported relay nodes between central and edge nodes in order to accommodate network segmentation by clients.
+        </p>
+        <div class="flex flex-wrap gap-2">
+          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Golang</span>
+          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Web Sockets</span>
+          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Gitlab CI</span>
+          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">On-Premise</span>
+          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Amazon Web Services</span>
+          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Hashicorp Terraform</span>
+          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Agile Development</span>
+        </div>
+      </div>
+
+      <!-- Robi Backend -->
+      <div class="bg-surface-light rounded-xl p-8 border border-white/10">
+        <div class="flex items-start justify-between mb-4">
+          <h3 class="text-2xl font-semibold">Robi Backend (now robi T)</h3>
+          <div class="flex gap-3 text-sm text-text-muted">
+            Company: Posicube
+          </div>
+          <div class="flex gap-3 text-sm text-text-muted">
+            Roles: Backend Engineer, Engineering Manager
+          </div>
+        </div>
+        <p class="text-text-muted mb-6">
+          API server for taking audio data from edge nodes, applying business logic, and relaying instructions via Google DialogFlow. Used monorepo composed
+          of six different microservices, controlled by feature flags.
+        </p>
+        <div class="flex flex-wrap gap-2">
+          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Javascript</span>
+          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">NodeJS</span>
+          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Firestore</span>
+          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Google DialogFlow</span>
+          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Google Cloud Platform</span>
+          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Amazon Web Services</span>
+          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Hashicorp Consul</span>
+          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Docker Swarm</span>
+          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Kubernetes</span>
+          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Hashicorp Terraform</span>
+          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">ElasticSearch</span>
+          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Kibana</span>
+          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">DataDog</span>
+          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Gitlab CI</span>
+          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Agile Development</span>
+        </div>
+      </div>
+
+      <!-- Wordpress Deployment -->
+      <div class="bg-surface-light rounded-xl p-8 border border-white/10">
+        <div class="flex items-start justify-between mb-4">
+          <h3 class="text-2xl font-semibold">Wordpress Deployment</h3>
+          <div class="flex gap-3 text-sm text-text-muted">
+            Company: PUBG Corporation
+          </div>
+          <div class="flex gap-3 text-sm text-text-muted">
+            Roles: DevOps Engineer
+          </div>
+        </div>
+        <p class="text-text-muted mb-6">
+          Deployed Wordpress to replace the company home page.
+        </p>
+        <div class="flex flex-wrap gap-2">
+          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Amazon Web Services</span>
+          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Hashicorp Terraform</span>
+        </div>
+      </div>
+
+      <!-- Car Rental Service -->
+      <div class="bg-surface-light rounded-xl p-8 border border-white/10">
+        <div class="flex items-start justify-between mb-4">
+          <h3 class="text-2xl font-semibold">Car Rental Service</h3>
+          <div class="flex gap-3 text-sm text-text-muted">
+            Company: SK TechX (SK Telecom)
+          </div>
+          <div class="flex gap-3 text-sm text-text-muted">
+            Roles: Backend Engineer
+          </div>
+        </div>
+        <p class="text-text-muted mb-6">
+          Service to allow users to reserve car rentals and autonomously enable users to access the car without human intervention.
+        </p>
+        <div class="flex flex-wrap gap-2">
+          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Java</span>
+          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Spring Boot</span>
+          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Maven</span>
+          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">BitBucket</span>
+        </div>
+      </div>
+
+      <!-- Network Player Impact Report -->
+      <div class="bg-surface-light rounded-xl p-8 border border-white/10">
+        <div class="flex items-start justify-between mb-4">
+          <h3 class="text-2xl font-semibold">Car Rental Service</h3>
+          <div class="flex gap-3 text-sm text-text-muted">
+            Company: Riot Games
+          </div>
+          <div class="flex gap-3 text-sm text-text-muted">
+            Roles: Data Analyst
+          </div>
+        </div>
+        <p class="text-text-muted mb-6">
+          Report using petabytes of game and infrastructure data to analyze if players had a meaningful win percentage increase when playing on a wired
+          connection versus wireless connection.
+        </p>
+        <div class="flex flex-wrap gap-2">
+          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Tableau</span>
+          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Hadoop Hive</span>
+        </div>
+      </div>
+
+      <!-- Near Real-Time Service Monitoring -->
+      <div class="bg-surface-light rounded-xl p-8 border border-white/10">
+        <div class="flex items-start justify-between mb-4">
+          <h3 class="text-2xl font-semibold">Near Real-Time Service Monitoring</h3>
+          <div class="flex gap-3 text-sm text-text-muted">
+            Company: Riot Games
+          </div>
+          <div class="flex gap-3 text-sm text-text-muted">
+            Roles: Data Engineer
+          </div>
+        </div>
+        <p class="text-text-muted mb-6">
+          System to collect minute-resolution metrics from game server and auxiliary service infrastructure, including metrics like game server availability,
+          login queue size, and total concurrent players, and display these metrics to the Network Operations Center (NOC). 
+        </p>
+        <div class="flex flex-wrap gap-2">
+          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Bash</span>
+          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Python</span>
+          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">MySQL</span>
+          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">JMX</span>
+        </div>
+      </div>
+
+      <!-- Monster Brawl -->
+      <div class="bg-surface-light rounded-xl p-8 border border-white/10">
+        <div class="flex items-start justify-between mb-4">
+          <h3 class="text-2xl font-semibold">Monster Brawl</h3>
+          <div class="flex gap-3 text-sm text-text-muted">
+            Company: Chainsaw Rabbit Games (never incorporated)
+          </div>
+          <div class="flex gap-3 text-sm text-text-muted">
+            Roles: Game Designer, Game Engineer, Backend Engineer
+          </div>
+        </div>
+        <p class="text-text-muted mb-6">
+          Turn-based battle game where players would pit classic monsters against each other. Included account management, matchmaking, gameplay, and stats. Never released.
+        </p>
+        <div class="flex flex-wrap gap-2">
+          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Lua</span>
+          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">CoronaSDK</span>
+          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Python</span>
+          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Twisted Matrix</span>
+        </div>
+      </div>
+
+      <!-- Nagios Management and Expansion -->
+      <div class="bg-surface-light rounded-xl p-8 border border-white/10">
+        <div class="flex items-start justify-between mb-4">
+          <h3 class="text-2xl font-semibold">Nagios Management and Expansion</h3>
+          <div class="flex gap-3 text-sm text-text-muted">
+            Company: Asurion Mobile Applications
+          </div>
+          <div class="flex gap-3 text-sm text-text-muted">
+            Roles: Monitoring Engineer
+          </div>
+        </div>
+        <p class="text-text-muted mb-6">
+          Expanded Nagios metrics to improve monitoring and enable more meaningful, fine-grained alerting in order to reduce noise.
+        </p>
+        <div class="flex flex-wrap gap-2">
+          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Nagios</span>
+          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Python</span>
+        </div>
+      </div>
+
+      <!-- Splunk Deployment -->
+      <div class="bg-surface-light rounded-xl p-8 border border-white/10">
+        <div class="flex items-start justify-between mb-4">
+          <h3 class="text-2xl font-semibold">Splunk Deployment</h3>
+          <div class="flex gap-3 text-sm text-text-muted">
+            Company: Asurion Mobile Applications
+          </div>
+          <div class="flex gap-3 text-sm text-text-muted">
+            Roles: Monitoring Engineer
+          </div>
+        </div>
+        <p class="text-text-muted mb-6">
+          Implemented green-field deployment of Splunk, aggregating all server logs, extracting metrics from logs, building alerts, and building dashboards in order to 
+          reduce mean time to resolution (MTR) and increase success chance of root cause analysis (RCA).
+        </p>
+        <div class="flex flex-wrap gap-2">
+          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Splunk</span>
+          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Python</span>
+        </div>
+      </div>
+
+      <!-- Build System Prototype -->
+      <div class="bg-surface-light rounded-xl p-8 border border-white/10">
+        <div class="flex items-start justify-between mb-4">
+          <h3 class="text-2xl font-semibold">Build System Prototype</h3>
+          <div class="flex gap-3 text-sm text-text-muted">
+            Company: Asurion Mobile Applications
+          </div>
+          <div class="flex gap-3 text-sm text-text-muted">
+            Roles: Monitoring Engineer
+          </div>
+        </div>
+        <p class="text-text-muted mb-6">
+          Prototyped upgrade of the build system, migrating from legacy Perl system to Ruby on Rails. Deployed after my departure.
+        </p>
+        <div class="flex flex-wrap gap-2">
+          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Ruby</span>
+          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Ruby on Rails</span>
+        </div>
+      </div>
+
+      <!-- Splunk Expansion -->
+      <div class="bg-surface-light rounded-xl p-8 border border-white/10">
+        <div class="flex items-start justify-between mb-4">
+          <h3 class="text-2xl font-semibold">Splunk Expansion</h3>
+          <div class="flex gap-3 text-sm text-text-muted">
+            Company: Asurion
+          </div>
+          <div class="flex gap-3 text-sm text-text-muted">
+            Roles: Monitoring Engineer
+          </div>
+        </div>
+        <p class="text-text-muted mb-6">
+          Expanded Splunk from an unmaintained audit fulfillment tool to a core component of company monitoring systems. Deployed Splunk to all company infrastructure 
+          rather than a core security subset. Worked with Splunk professional services to extract meaningful metrics from logs and build dashboards to provide key
+          monitoring data. Reduced isolation time of incidents by 80%.
+        </p>
+        <div class="flex flex-wrap gap-2">
+          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Splunk</span>
+          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Python</span>
+        </div>
+      </div>
+
+      <!-- ETL Operations -->
+      <div class="bg-surface-light rounded-xl p-8 border border-white/10">
+        <div class="flex items-start justify-between mb-4">
+          <h3 class="text-2xl font-semibold">ETL Operations</h3>
+          <div class="flex gap-3 text-sm text-text-muted">
+            Company: Asurion
+          </div>
+          <div class="flex gap-3 text-sm text-text-muted">
+            Roles: ETL Operations Engineer
+          </div>
+        </div>
+        <p class="text-text-muted mb-6">
+          Administered, supported, and developed homebrewed SSIS-based ETL framework consisting of over 600 active jobs. Managed critical ETL workflows for jobs
+          like new customer data acquisition from partners, new claims, and claim fulfillment. Worked on knowledge management system to more quickly identify solutions
+          to previously encountered problems. Helped manage offshore team based in India, including onboarding and training.
+        </p>
+        <div class="flex flex-wrap gap-2">
+          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">SSIS</span>
+          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Microsoft SQL Server</span>
+          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">PHP</span>
+        </div>
+      </div>
+
+      <!-- Single Pane of Glass Project -->
+      <div class="bg-surface-light rounded-xl p-8 border border-white/10">
+        <div class="flex items-start justify-between mb-4">
+          <h3 class="text-2xl font-semibold">Single Pane of Glass Project</h3>
+          <div class="flex gap-3 text-sm text-text-muted">
+            Company: Asurion
+          </div>
+          <div class="flex gap-3 text-sm text-text-muted">
+            Roles: Monitoring Engineer
+          </div>
+        </div>
+        <p class="text-text-muted mb-6">
+          Administered, supported, and developed homebrewed SSIS-based ETL framework consisting of over 600 active jobs. Managed critical ETL workflows for jobs
+          like new customer data acquisition from partners, new claims, and claim fulfillment. Worked on knowledge management system to more quickly identify solutions
+          to previously encountered problems. Helped manage offshore team based in India, including onboarding and training.
+        </p>
+        <div class="flex flex-wrap gap-2">
+          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">CA Spectrum</span>
+          <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">CA eHealth</span>
+        </div>
+      </div>
+
+    </div>
+  </Section>
 
   <!-- Personal Projects -->
   <Section id="personal-projects" title="Personal Projects">
