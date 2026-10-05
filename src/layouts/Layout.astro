@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css'
 import MobileNav from '../components/MobileNav.astro'
+import Lightbox from '../components/Lightbox.astro'
 
 interface Props {
   title: string;
@@ -11,8 +12,8 @@ interface Props {
 
 const {
   title,
-  description = "Beege — Engineering Leader, Builder, Community Organizer",
-  ogImage = "/profile.png",
+  description = "Beege: Engineering Leader, Builder, Community Organizer",
+  ogImage = "/og-image.png",
   url = "https://portfolio.beege.works",
 } = Astro.props;
 
@@ -72,6 +73,8 @@ const canonicalURL = new URL(Astro.url.pathname, url).href;
     <main id="main-content" class="pt-20">
       <slot />
     </main>
+
+    <Lightbox />
 
     <footer class="border-t border-white/10 py-8 text-center text-text-muted text-sm">
       <div class="max-w-5xl mx-auto px-6">

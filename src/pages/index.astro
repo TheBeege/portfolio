@@ -7,20 +7,26 @@ import ProjectCard from '../components/ProjectCard.astro';
 import OtherContributions from '../components/OtherContributions.astro';
 ---
 
-<Layout title="Beege's Portfolio">
+<Layout title="Bryan “Beege” Berry | Engineering Leader">
   <!-- Hero -->
   <div class="min-h-[70vh] flex items-center">
     <div class="max-w-5xl mx-auto px-6 flex flex-col md:flex-row items-center gap-8 md:gap-12">
       <div class="flex-1 order-2 md:order-1">
-        <p class="text-primary font-mono mb-4">Hi, I'm</p>
+        <p class="text-primary-light font-mono mb-4">Hi, I'm</p>
         <h1 class="text-5xl md:text-7xl font-bold mb-4">Beege!</h1>
         <p class="text-text-muted mb-4">Or Bryan Berry if you want to be boring and legal</p>
-        <p class="text-xl md:text-2xl text-text-muted max-w-2xl mb-8">
+        <p class="text-xl md:text-2xl text-text-muted max-w-2xl mb-4">
           Engineering leader, builder, and community organizer based in Seoul.
         </p>
-        <div class="flex gap-4">
+        <p class="mb-8">
+          <span class="inline-block w-2 h-2 rounded-full bg-green-400 mr-2 align-middle" aria-hidden="true"></span>Open to engineering leadership roles. <span class="whitespace-nowrap">F-2-7</span> visa through 2028, no sponsorship required.
+        </p>
+        <div class="flex flex-wrap gap-4">
           <a href="#contact" class="bg-primary hover:bg-primary-dark px-6 py-3 rounded-lg font-medium transition-colors">
             Get in touch
+          </a>
+          <a href="https://docs.google.com/document/d/1JfpCW-rgDlxkCKuHGg8_kJIpEeM0M-q7cFDbakq9uo8/edit?tab=t.0" target="_blank" rel="noopener noreferrer" class="border border-white/20 hover:border-white/40 px-6 py-3 rounded-lg font-medium transition-colors">
+            Resume <span aria-hidden="true">↗</span><span class="sr-only">(opens in new tab)</span>
           </a>
           <a href="#professional-projects" class="border border-white/20 hover:border-white/40 px-6 py-3 rounded-lg font-medium transition-colors">
             See my work
@@ -38,10 +44,10 @@ import OtherContributions from '../components/OtherContributions.astro';
   <Section id="about" title="About">
     <div class="text-text-muted text-lg leading-relaxed max-w-3xl space-y-4">
       <p>
-        I'm a software engineer and engineering leader who's spent the last 15 years building things, 9 of which in Seoul. I've worked across gaming, insurance, AI, and medical tech — from Riot Games to PUBG to Lunit, where I led teams building annotation and data management tools for cancer detection AI.
+        I'm a software engineer and engineering leader who's spent the last 16 years building things, 10 of which in Seoul. I've worked across gaming, insurance, AI, and medical tech, from Riot Games to PUBG to Lunit, where I led teams building annotation and data management tools for cancer detection AI.
       </p>
       <p>
-        I like building things that matter, leading teams that ship, and teaching people who want to learn. I founded CodeSeoul to give developers in Seoul a place to grow, and I'm currently building a startup while exploring medical AI.
+        I like building things that matter, leading teams that ship, and teaching people who want to learn. I founded CodeSeoul to give developers in Seoul a place to grow, and I'm currently looking for new opportunities.
       </p>
       <p>
         Georgia Tech grad (Computational Media). American expat. Fluent in English, working on Korean.
@@ -54,14 +60,44 @@ import OtherContributions from '../components/OtherContributions.astro';
     <div class="space-y-16">
 
       <ProjectCard
+        title="Anvo"
+        roles={["Co-founder", "CTO"]}
+        teamSize="2"
+        links={[{ label: "Live", url: "https://anvo.tech" }]}
+        images={[
+          { src: "/projects/anvo/1.png", alt: "Anvo landing page with the headline 'The Intelligent Era of Medical Device Repair'" },
+          { src: "/projects/anvo/2.png", alt: "Anvo chat diagnosing white dots on a Philips EPIQ 4 ultrasound screen with step-by-step troubleshooting" },
+          { src: "/projects/anvo/3.png", alt: "Anvo repair request showing hospital and equipment details at step 4 of 7, hospital sign-off" }
+        ]}
+        tags={["Python", "LLM Inference", "Medical AI", "Self-Hosted", "Agent Tooling", "RAG", "pgvector"]}
+      >
+        <p>A web app for assisting medical imaging device technicians in China. Designed to run models like Qwen on local infrastructure or with remote models like Claude. Uses agent tools to lookup repair guidance documentation via RAG and web search. Also includes a medical device management platform that tracks hospital equipment and service orders through a multi-step repair workflow, with hospital sign-off and a documented service history to support regulatory compliance.</p>
+      </ProjectCard>
+
+      <ProjectCard
+        title="Arbor"
+        roles={["Co-founder", "CTO"]}
+        teamSize="3"
+        links={[{ label: "Live", url: "https://arbortech.io" }]}
+        images={[
+          { src: "/projects/arbor/1.png", alt: "Arbor landing page with the headline 'The alignment layer your tools are missing.' and a strategy-to-execution hierarchy diagram" },
+          { src: "/projects/arbor/2.png", alt: "Arbor hierarchical tree view with nested task cards showing priority levels and roll-up progress" },
+          { src: "/projects/arbor/3.png", alt: "Arbor team settings page showing member management and API key configuration" }
+        ]}
+        tags={["React", "TypeScript", "Supabase", "SaaS", "Model Context Protocol", "PostgreSQL"]}
+      >
+        <p>A SaaS tool for leaders to visualize alignment between company goals and the work teams are actually doing, identify bottlenecks and risks, and manage workload capacity. Connects to project management tools (Jira, Linear, etc.) and surfaces where planned work drifts from strategic objectives, giving leaders real visibility without micromanaging. Designed with a bidirectional sync strategy to meet teams where they already work.</p>
+      </ProjectCard>
+
+      <ProjectCard
         title="Data Management System"
         company="Lunit"
         roles={["Product Manager", "Project Manager"]}
         teamSize="6"
         highlight="300 TPS sustained in production"
-        tags={["PostgreSQL", "Python", "DICOM", "Github Actions", "Google Cloud Platform", "Hashicorp Terraform", "Kubernetes", "Scrum", "Agile Development"]}
+        tags={["PostgreSQL", "Python", "DICOM", "GitHub Actions", "Google Cloud Platform", "HashiCorp Terraform", "Kubernetes", "Scrum", "Agile Development"]}
       >
-        <p>Centralized system for organizing DICOM metadata, file references, and clinical study data — the first successful effort to get all the data in one place for annotation and ML training. Ideated the original system and led product management, delivering features including manufacturer aliasing, acquisition project tracking, and versioned ML splits for EU AI Act reproducibility. Centralized ingestion also uncovered and resolved data quality and duplication issues.</p>
+        <p>Centralized system for organizing DICOM metadata, file references, and clinical study data: the first successful effort to get all the data in one place for annotation and ML training. Ideated the original system and led product management, delivering features including manufacturer aliasing, acquisition project tracking, and versioned ML splits for EU AI Act reproducibility. Centralized ingestion also uncovered and resolved data quality and duplication issues.</p>
       </ProjectCard>
 
       <ProjectCard
@@ -70,7 +106,7 @@ import OtherContributions from '../components/OtherContributions.astro';
         roles={["Project Manager"]}
         teamSize="6 data engineers"
         highlight="Reduced one inference task from 2 months to under 24 hours"
-        tags={["PostgreSQL", "Python", "Prefect", "DICOM", "Github Actions", "Google Cloud Platform", "Hashicorp Terraform", "Kubernetes", "Scrum", "Agile Development"]}
+        tags={["PostgreSQL", "Python", "Prefect", "DICOM", "GitHub Actions", "Google Cloud Platform", "HashiCorp Terraform", "Kubernetes", "Scrum", "Agile Development"]}
       >
         <p>Massively concurrent pipeline for ingesting medical imaging data, preparing annotation datasets, and running bulk inference with in-house AI models. Conceived the original idea and built the proof of concept using Prefect before handing off to the team. Routinely processed hundreds of terabytes using spot instances and tuned autoscaling.</p>
       </ProjectCard>
@@ -80,9 +116,9 @@ import OtherContributions from '../components/OtherContributions.astro';
         company="Lunit"
         roles={["Product Manager", "Project Manager", "DevOps Engineer", "Engineering Manager"]}
         teamSize="7"
-        tags={["PostgreSQL", "Python", "Django", "MessagePack", "WebGL", "Github Actions", "Google Cloud Platform", "Hashicorp Terraform", "Kubernetes", "Scrum", "Agile Development"]}
+        tags={["PostgreSQL", "Python", "Django", "MessagePack", "WebGL", "GitHub Actions", "Google Cloud Platform", "HashiCorp Terraform", "Kubernetes", "Scrum", "Agile Development"]}
       >
-        <p>Internal tool for oncologists to label pathology whole slide images for cancer detection AI training, supporting distinct annotation modes — painting tissue areas, designating points, drawing cell contours, and sub-cellular labeling — on deeply zoomable WSIs. External contractor access with manager permissions enabled Lunit to scale annotation beyond its internal team.</p>
+        <p>Internal tool for oncologists to label pathology whole slide images for cancer detection AI training, supporting distinct annotation modes (painting tissue areas, designating points, drawing cell contours, and sub-cellular labeling) on deeply zoomable WSIs. External contractor access with manager permissions enabled Lunit to scale annotation beyond its internal team.</p>
       </ProjectCard>
 
       <ProjectCard
@@ -91,7 +127,7 @@ import OtherContributions from '../components/OtherContributions.astro';
         roles={["Product Manager", "Project Manager", "DevOps Engineer", "Backend Engineer", "Engineering Manager"]}
         teamSize="6"
         highlight="&ldquo;This is the smoothest annotation has ever gone.&rdquo;"
-        tags={["MongoDB", "Python", "FastAPI", "DICOM", "Cornerstone", "Github Actions", "Amazon Web Services", "Google Cloud Platform", "Hashicorp Terraform", "Kubernetes", "Scrum", "Agile Development"]}
+        tags={["MongoDB", "Python", "FastAPI", "DICOM", "Cornerstone", "GitHub Actions", "Amazon Web Services", "Google Cloud Platform", "HashiCorp Terraform", "Kubernetes", "Scrum", "Agile Development"]}
       >
         <p>Internal tool for radiologists to label medical images across chest X-rays, mammograms, and digital breast tomosynthesis, with queue-based and pool-based assignment and keyboard-shortcut-driven annotation. Took over as product manager and engineering manager. Introduced DBT modality support, multi-window current-prior comparison, cross-image annotation grouping, a reviewer feedback system, and an ML researcher API.</p>
       </ProjectCard>
@@ -101,7 +137,7 @@ import OtherContributions from '../components/OtherContributions.astro';
         company="Posicube"
         companyContext="Small startup (9–20 employees)"
         roles={["Backend Engineer", "Engineering Manager"]}
-        tags={["Golang", "Web Sockets", "Gitlab CI", "On-Premise", "Amazon Web Services", "Hashicorp Terraform", "Agile Development"]}
+        tags={["Golang", "Web Sockets", "GitLab CI", "On-Premise", "Amazon Web Services", "HashiCorp Terraform", "Agile Development"]}
       >
         <p>Remote management system for monitoring and controlling edge devices deployed at client sites. Built WebSocket-over-TLS communication between central and edge nodes, with relay node support for client network segmentation. All remote functions explicitly defined to pass security audits.</p>
       </ProjectCard>
@@ -111,16 +147,16 @@ import OtherContributions from '../components/OtherContributions.astro';
         company="Posicube"
         companyContext="Small startup (9–20 employees)"
         roles={["Backend Engineer", "Engineering Manager"]}
-        tags={["Javascript", "NodeJS", "Firestore", "Google DialogFlow", "Google Cloud Platform", "Amazon Web Services", "Hashicorp Consul", "Docker Swarm", "Kubernetes", "Hashicorp Terraform", "ElasticSearch", "Kibana", "DataDog", "Gitlab CI", "Agile Development"]}
+        tags={["JavaScript", "Node.js", "Firestore", "Google Dialogflow", "Google Cloud Platform", "Amazon Web Services", "HashiCorp Consul", "Docker Swarm", "Kubernetes", "HashiCorp Terraform", "Elasticsearch", "Kibana", "Datadog", "GitLab CI", "Agile Development"]}
       >
-        <p>Backend for Robi, an AI-powered phone receptionist that routes callers to appropriate departments via Google DialogFlow for speech recognition, intent detection, and TTS. Architected the backend as a monorepo of six microservices controlled by feature flags.</p>
+        <p>Backend for Robi, an AI-powered phone receptionist that routes callers to appropriate departments via Google Dialogflow for speech recognition, intent detection, and TTS. Architected the backend as a monorepo of six microservices controlled by feature flags.</p>
       </ProjectCard>
 
       <ProjectCard
         title="Car Rental Service"
         company="SK TechX (SK Telecom)"
         roles={["Backend Engineer"]}
-        tags={["Java", "Spring Boot", "Maven", "BitBucket"]}
+        tags={["Java", "Spring Boot", "Maven", "Bitbucket"]}
       >
         <p>Service enabling users to reserve and autonomously access rental cars without human intervention. Developed backend reservation and vehicle access APIs as part of an 8-service Spring Boot platform.</p>
       </ProjectCard>
@@ -165,10 +201,10 @@ import OtherContributions from '../components/OtherContributions.astro';
 
       <OtherContributions entries={[
         {
-          title: "Wordpress Deployment",
+          title: "WordPress Deployment",
           company: "PUBG",
           role: "DevOps",
-          summary: "Deployed Wordpress on AWS via Terraform to replace the company home page.",
+          summary: "Deployed WordPress on AWS via Terraform to replace the company home page.",
           tags: ["AWS", "Terraform"]
         },
         {
@@ -209,39 +245,19 @@ import OtherContributions from '../components/OtherContributions.astro';
     <div class="space-y-16">
 
       <ProjectCard
-        title="VizPlan"
-        links={[{ label: "Live", url: "https://vizplan.app" }]}
-        images={[
-          { src: "/vizplan1.png", alt: "VizPlan landing page showing 'Plan Your Work From Vision to Action' headline with an isometric node visualization" },
-          { src: "/vizplan2.png", alt: "VizPlan hierarchical tree view with nested task cards showing priority levels and roll-up progress" },
-          { src: "/vizplan3.png", alt: "VizPlan team settings page showing member management and API key configuration" }
-        ]}
-        tags={["Next.js", "TypeScript", "Supabase", "SaaS", "Model-Context Protocol", "PostgreSQL"]}
-      >
-        <p>A SaaS tool for leaders to visualize alignment between company goals and the work teams are actually doing, identify bottlenecks and risks, and manage workload capacity. Connects to project management tools (Jira, Linear, etc.) and surfaces where planned work drifts from strategic objectives — giving leaders real visibility without micromanaging. Designed with a bidirectional sync strategy to meet teams where they already work.</p>
-      </ProjectCard>
-
-      <ProjectCard
         title="MedDaaS"
         links={[
           { label: "Live", url: "https://meddaas.beege.works" },
           { label: "GitHub", url: "https://github.com/CodeSeoul/MedDaaS" }
         ]}
         images={[
-          { src: "/meddaas1.png", alt: "MedDaaS homepage with search bar and progress card showing a score of 62.9/100 with 2 reports completed" },
-          { src: "/meddaas2.png", alt: "MedDaaS reporting interface showing a chest X-ray with brightness and contrast controls alongside a report text editor" },
-          { src: "/medaas3.png", alt: "MedDaaS detailed feedback page with scoring breakdown for similarity, completeness, accuracy, and terminology" }
+          { src: "/projects/meddaas/1.png", alt: "MedDaaS homepage with search bar and progress card showing a score of 62.9/100 with 2 reports completed" },
+          { src: "/projects/meddaas/2.png", alt: "MedDaaS reporting interface showing a chest X-ray with brightness and contrast controls alongside a report text editor" },
+          { src: "/projects/meddaas/3.png", alt: "MedDaaS detailed feedback page with scoring breakdown for similarity, completeness, accuracy, and terminology" }
         ]}
         tags={["FastAPI", "Python", "LLM / RAG", "PostgreSQL", "SpoonAI SDK"]}
       >
-        <p>An AI-powered radiology training platform that helps medical students and radiologists sharpen their diagnostic skills. Students write diagnostic reports for chest X-rays, and the system compares them against expert ground truth using multi-step LLM analysis — delivering finding-by-finding scoring, educational feedback, and actionable improvement suggestions in real time via streaming. Built for the Spoon OS hackathon with CodeSeoul.</p>
-      </ProjectCard>
-
-      <ProjectCard
-        title="AI Fix Assist"
-        tags={["Python", "LLM Inference", "Medical AI", "Self-Hosted", "Agent Tooling", "RAG", "PGVector"]}
-      >
-        <p>A web app for assisting medical imaging device technicians in China. Designed to run models like Qwen on local infrastructure or with remote models like Claude. Uses agent tools to lookup repair guidance documentation via RAG and web search.</p>
+        <p>An AI-powered radiology training platform that helps medical students and radiologists sharpen their diagnostic skills. Students write diagnostic reports for chest X-rays, and the system compares them against expert ground truth using multi-step LLM analysis, delivering finding-by-finding scoring, educational feedback, and actionable improvement suggestions in real time via streaming. Built for the Spoon OS hackathon with CodeSeoul.</p>
       </ProjectCard>
 
       <ProjectCard
@@ -258,96 +274,135 @@ import OtherContributions from '../components/OtherContributions.astro';
   <Section id="professional-experience" title="Professional Experience">
     <div class="space-y-10">
 
+      <!-- Anvo -->
+      <div class="border-l-2 border-primary pl-6">
+        <h3 class="text-xl font-semibold">Co-founder & CTO</h3>
+        <p class="text-primary-light text-sm mb-1">Anvo, Seoul</p>
+        <p class="text-text-muted text-sm mb-3">November 2025 – Present (concurrent with Arbor)</p>
+        <ul class="text-text-muted space-y-2 list-disc list-inside text-sm">
+          <li>Built medical device management platform and AI agent for medical device repair on ReactJS, PHP, Laravel, Python, LangGraph, PostgreSQL, and pgvector, using a semi-autonomous agentic development pipeline via Claude Code.</li>
+          <li>Migrated legacy PHP application from ThinkPHP and defunct proprietary Chinese external services to Laravel.</li>
+          <li>Built RAG to store medical device manuals, service order records, and online resources to support the AI agent.</li>
+          <li>Filed patent pending (10-2026-0183554) for novel graph RAG specific to medical device operation and repair complexities.</li>
+        </ul>
+      </div>
+
+      <!-- Arbor -->
+      <div class="border-l-2 border-primary pl-6">
+        <h3 class="text-xl font-semibold">Co-founder & CTO</h3>
+        <p class="text-primary-light text-sm mb-1">Arbor, Seoul</p>
+        <p class="text-text-muted text-sm mb-3">November 2025 – August 2026 (10 months, concurrent with Anvo)</p>
+        <ul class="text-text-muted space-y-2 list-disc list-inside text-sm">
+          <li>Built AI-enabled strategic goal and project management platform, focused on connecting work to company goals and organizational health on ReactJS, Supabase, and Cloudflare, using a semi-autonomous agentic development pipeline via Claude Code.</li>
+          <li>Built a team of three, secured two alpha testing customers, contracted design and government grant application advisor, and interviewed over a dozen potential customers.</li>
+          <li>Built MCP server and skills for AI integration and ease of customer onboarding.</li>
+        </ul>
+      </div>
+
       <!-- Lunit -->
       <div class="border-l-2 border-primary pl-6">
         <h3 class="text-xl font-semibold">Product Management Team Lead, AI Platform</h3>
-        <p class="text-primary text-sm mb-1">Lunit — Gangnam-gu, Seoul</p>
+        <p class="text-primary-light text-sm mb-1">Lunit, Gangnam-gu, Seoul</p>
         <p class="text-text-muted text-sm mb-3">August 2022 – October 2025 (3 years, 2 months)</p>
         <ul class="text-text-muted space-y-2 list-disc list-inside text-sm">
-          <li>Planned and implemented the first database for radiology products' training and validation data, covering petabytes of data, improving data management efficiency and regulatory compliance.</li>
-          <li>Coordinated data model redesign and de-duplication logic to reduce manual efforts across data ingestion.</li>
-          <li>Defined and implemented a data usage management system to mitigate risk of data leakage in the AI model development process.</li>
-          <li>Expanded product management capabilities by hiring 2 PMs, 1 program manager, 2 designers, and 1 QA engineer.</li>
+          <li>Created the team by hiring 2 product managers, 1 program manager, 2 designers, and 1 QA engineer.</li>
+          <li>Improved data management efficiency and regulatory compliance by planning, organizing, and implementing the first database for radiology products' training and validation data, covering petabytes of data.</li>
+          <li>Ensured regulatory and legal compliance by planning and organizing structured contract tracking features and building processes around them.</li>
+          <li>Reduced manual efforts and de-duplicated data by refining the data ingestion process, coordinating data model redesign, and defining de-duplication logic.</li>
+          <li>Identified expired data, identified duplicated data, and clarified R&amp;R by coordinating data cataloguing, contract verification, and ingestion of data into the new data management system, removing terabytes of duplicate data.</li>
+          <li>Mitigated risk of data leakage in the AI model development process by defining and implementing allowed data usage management system.</li>
         </ul>
       </div>
 
       <div class="border-l-2 border-primary pl-6">
         <h3 class="text-xl font-semibold">AI Platform Team Lead</h3>
-        <p class="text-primary text-sm mb-1">Lunit — Gangnam-gu, Seoul</p>
+        <p class="text-primary-light text-sm mb-1">Lunit, Gangnam-gu, Seoul</p>
         <p class="text-text-muted text-sm mb-3">September 2021 – August 2022 (11 months)</p>
         <ul class="text-text-muted space-y-2 list-disc list-inside text-sm">
-          <li>Led team to improve annotation project flow, lauded by customers as "the smoothest annotation projects have ever gone."</li>
-          <li>Added 2.5D image modality support to the image annotation tool.</li>
-          <li>Expanded the team by hiring a DevOps engineer, backend engineering lead, backend engineer, and MLOps engineering lead.</li>
-          <li>Designed and led implementation of hierarchical data labels, contour annotations, reviewer system, progress visualization, and bad data reporting.</li>
+          <li>Led team to improve annotation project flow in the annotation tool, lauded by customers as "the smoothest annotation projects have ever gone."</li>
+          <li>Worked with customers and team to add additional radiological image modalities to the image annotation tool, supporting 2.5D images in addition to 2D image views.</li>
+          <li>Expanded the team by hiring one DevOps engineer, a backend engineering lead, a backend engineer, and an MLOps engineering lead, conducting interviews and designing and reviewing technical assessments.</li>
+          <li>Led extra-team effort to set up company hackathon.</li>
+          <li>Helped design, planned, and led the team to add features to the annotation tool, including hierarchical data labels, contour annotations, reviewer system, annotation project progress visualization, and bad data reporting system.</li>
+          <li>Set up and managed Scrum-adjacent development lifecycle, including asynchronous daily updates to support work-from-home team members, backlog grooming, and sprint planning.</li>
         </ul>
       </div>
 
       <div class="border-l-2 border-primary pl-6">
         <h3 class="text-xl font-semibold">Senior Back-end Engineer / DevOps Engineer</h3>
-        <p class="text-primary text-sm mb-1">Lunit — Gangnam-gu, Seoul</p>
+        <p class="text-primary-light text-sm mb-1">Lunit, Gangnam-gu, Seoul</p>
         <p class="text-text-muted text-sm mb-3">January 2021 – September 2021 (8 months)</p>
         <ul class="text-text-muted space-y-2 list-disc list-inside text-sm">
-          <li>Built CI/CD system on BuildKite for the training data annotation system.</li>
-          <li>Refactored FastAPI services to better follow microservice architecture.</li>
-          <li>Configured Kubernetes deployment on AWS EKS (Terraform) and baremetal (Ansible).</li>
+          <li>Assisted in hiring via interviews and technical assessment reviews.</li>
+          <li>Expanded API to support administrative interface for annotation tool, reducing the time and effort required to start and manage annotation projects.</li>
+          <li>Automated testing and deployment of the training data annotation system by building CI/CD system on Buildkite.</li>
+          <li>Refactored FastAPI services to better follow microservice architecture for image annotation tool.</li>
+          <li>Configured Kubernetes deployment of services on AWS EKS using Terraform and baremetal via Ansible.</li>
         </ul>
       </div>
 
       <!-- Posicube -->
       <div class="border-l-2 border-white/30 pl-6">
-        <h3 class="text-xl font-semibold">Back-end Engineer / DevOps / Team Lead</h3>
-        <p class="text-primary text-sm mb-1">Posicube — Seocho-gu, Seoul</p>
+        <h3 class="text-xl font-semibold">Back-end Engineer / DevOps Engineer / Back-end Team Lead</h3>
+        <p class="text-primary-light text-sm mb-1">Posicube, Seocho-gu, Seoul</p>
         <p class="text-text-muted text-sm mb-3">September 2018 – December 2020 (2 years, 3 months)</p>
         <ul class="text-text-muted space-y-2 list-disc list-inside text-sm">
-          <li>Built back-end services for AI-driven phone reception product and online delivery product in NodeJS on AWS Lambda and GCP Kubernetes.</li>
-          <li>Led back-end team of 4 engineers building MSA-compatible monorepo for IoT-to-AI communication.</li>
+          <li>Built back-end services for AI-driven phone reception product and internal administration console in Node.js with MySQL Aurora on AWS Lambda and supporting services, using Terraform for infrastructure.</li>
+          <li>Built back-end services for AI-driven online delivery product in Node.js with Cloud SQL on GCP Kubernetes. Back-end services included company directory management service, authentication service, Docker Swarm management service, hardware provisioning service, and call logging service.</li>
+          <li>Led back-end team of 4 total engineers to build MSA-compatible monorepo for handling communication between IoT device and AI system.</li>
+          <li>Set up various infrastructure, such as site-to-site VPN, office network, self-hosted GitLab CI, and build pipelines.</li>
           <li>Designed and managed infrastructure in AWS and GCP using Terraform. Set up ELK logging on GCP Kubernetes.</li>
-          <li>Built remote control service for field Raspberry Pi devices using Golang on AWS ECS.</li>
+          <li>Built remote control service and client for client-located Raspberry Pi devices using Golang and AWS.</li>
+          <li>Built status reporting and call logging services in Python managed by systemd for AI-driven software on Raspberry Pi devices.</li>
         </ul>
       </div>
 
       <!-- PUBG -->
       <div class="border-l-2 border-white/30 pl-6">
         <h3 class="text-xl font-semibold">Back-end Engineer</h3>
-        <p class="text-primary text-sm mb-1">PUBG Corporation — Seocho-gu, Seoul</p>
+        <p class="text-primary-light text-sm mb-1">PUBG Corporation, Seocho-gu, Seoul</p>
         <p class="text-text-muted text-sm mb-3">November 2017 – July 2018 (8 months)</p>
         <ul class="text-text-muted space-y-2 list-disc list-inside text-sm">
-          <li>Developed microservices using Go and C#. Automated infrastructure with Terraform.</li>
-          <li>Built data pipelines for public API service and ML systems using AWS Lambda, SQS, S3, Redshift, and Kinesis.</li>
-          <li>Delivered public API service written in Go, running on AWS ECS.</li>
+          <li>Assisted in development of microservices using Go and C#.</li>
+          <li>Automated infrastructure using Terraform for numerous projects, from WordPress to machine learning systems.</li>
+          <li>Set up data pipelines for public API service, a machine learning system, and general data analysis using AWS Lambda, SQS, S3, Redshift, and Kinesis.</li>
+          <li>Set up GitLab CI configuration to enable faster building, testing, and deployment of projects.</li>
+          <li>Helped deliver public API service written in Go, running on AWS ECS.</li>
         </ul>
       </div>
 
       <!-- SK Tech X -->
       <div class="border-l-2 border-white/30 pl-6">
         <h3 class="text-xl font-semibold">Back-end Engineer</h3>
-        <p class="text-primary text-sm mb-1">SK Tech X — Gangnam-gu, Seoul</p>
+        <p class="text-primary-light text-sm mb-1">SK Tech X, Gangnam-gu, Seoul</p>
         <p class="text-text-muted text-sm mb-3">January 2017 – November 2017 (10 months)</p>
         <ul class="text-text-muted space-y-2 list-disc list-inside text-sm">
-          <li>Worked on service platform built on Spring consisting of 8 services.</li>
-          <li>Refactored build pipeline, reducing local build time from 7+ minutes to under 2 minutes.</li>
+          <li>Converted build pipeline to code in source control using Jenkins Job DSL and Pipeline DSL. Created ETL system for reporting using Spring Batch.</li>
+          <li>Worked on service platform built on Spring consisting of 8 services, including web servers and REST APIs.</li>
+          <li>Refactored build pipeline, reducing local build time from minimum 7 minutes for all services to maximum 2 minutes for the longest service and 20 seconds for the shortest.</li>
         </ul>
       </div>
 
       <!-- Riot Games -->
       <div class="border-l-2 border-white/30 pl-6">
         <h3 class="text-xl font-semibold">Live Data Analyst</h3>
-        <p class="text-primary text-sm mb-1">Riot Games — Santa Monica, CA</p>
+        <p class="text-primary-light text-sm mb-1">Riot Games, Santa Monica, CA</p>
         <p class="text-text-muted text-sm mb-3">October 2013 – September 2016 (2 years, 11 months)</p>
         <ul class="text-text-muted space-y-2 list-disc list-inside text-sm">
-          <li>Developed and maintained near-real-time, international data collection systems at minute-resolution for 100+ metrics using Bash, Python, and Go.</li>
-          <li>Created Tableau reports on client network performance and game health metrics using Hadoop Hive data from millions of players globally.</li>
-          <li>Developed a player impact REST API in Go deployed on Docker, exposing abnormal metric values around the player experience.</li>
-          <li>Designed and taught a Python basics class to NOC Technicians.</li>
+          <li>Developed and maintained near-real-time, international data collection systems at minute-resolution for over 100 metrics using Bash, Python, and Go.</li>
+          <li>Experimented with Kafka, Elasticsearch, Kibana, and Timelion for collecting and visualizing network data.</li>
+          <li>Created Tableau reports on client network performance, game server capacity, NOC KPIs, and other game health metrics, using data in Hadoop Hive from millions of players across the globe.</li>
+          <li>Developed a player impact REST API in Go, deployed on Docker, exposing abnormal metric values around the player experience.</li>
+          <li>Automated over 400 requests and generation of promo codes by creating a PHP web app.</li>
+          <li>Designed and taught Python basics class to NOC Technicians.</li>
         </ul>
       </div>
 
       <!-- Chainsaw Rabbit -->
       <div class="border-l-2 border-white/30 pl-6">
         <h3 class="text-xl font-semibold">Co-founder & Developer</h3>
-        <p class="text-primary text-sm mb-1">Chainsaw Rabbit Games — San Francisco, CA</p>
-        <p class="text-text-muted text-sm mb-3">November 2012 – June 2015 (part-time)</p>
+        <p class="text-primary-light text-sm mb-1">Chainsaw Rabbit Games, San Francisco, CA</p>
+        <p class="text-text-muted text-sm mb-3">November 2012 – June 2015 (2 years, 7 months, part-time)</p>
         <ul class="text-text-muted space-y-2 list-disc list-inside text-sm">
           <li>Co-designed asynchronous, competitive, multi-platform mobile game.</li>
           <li>Created game client in Lua/CoronaSDK and Python-based game server using Twisted Matrix.</li>
@@ -356,8 +411,8 @@ import OtherContributions from '../components/OtherContributions.astro';
 
       <!-- Asurion -->
       <div class="border-l-2 border-white/30 pl-6">
-        <h3 class="text-xl font-semibold">Production Systems Analyst → Analyst II</h3>
-        <p class="text-primary text-sm mb-1">Asurion — San Francisco, CA → Nashville, TN</p>
+        <h3 class="text-xl font-semibold">Analyst II → Production Systems Analyst</h3>
+        <p class="text-primary-light text-sm mb-1">Asurion, Nashville, TN → San Francisco, CA</p>
         <p class="text-text-muted text-sm mb-3">August 2010 – October 2013 (3 years)</p>
         <ul class="text-text-muted space-y-2 list-disc list-inside text-sm">
           <li>Implemented distributed Splunk infrastructure from the ground up. Reduced incident isolation time by 80%.</li>
@@ -368,7 +423,7 @@ import OtherContributions from '../components/OtherContributions.astro';
       <!-- Education -->
       <div class="mt-12 border-l-2 border-primary/50 pl-6">
         <h3 class="text-xl font-semibold">B.S. Computational Media</h3>
-        <p class="text-primary text-sm mb-1">Georgia Institute of Technology</p>
+        <p class="text-primary-light text-sm mb-1">Georgia Institute of Technology</p>
         <p class="text-text-muted text-sm">2006 – 2011</p>
       </div>
 
@@ -379,10 +434,13 @@ import OtherContributions from '../components/OtherContributions.astro';
   <Section id="community" title="Community">
     <div class="text-text-muted text-lg leading-relaxed max-w-3xl space-y-4">
       <p>
-        I founded <a href="https://www.meetup.com/codeseoul/" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">CodeSeoul</a> in 2016 — a non-profit developer community in Seoul with 3,400+ members on Meetup, averaging 40 attendees per event. We run coding classes, hackathons, career workshops, and more.
+        I founded <a href="https://www.meetup.com/codeseoul/" target="_blank" rel="noopener noreferrer" class="text-primary-light underline underline-offset-2">CodeSeoul</a> in 2016. It's a non-profit developer community in Seoul with 3,400+ members on Meetup, recently averaging 40 attendees per event. We run coding classes, workshops, lectures, hackathons, and socials. We also ran a DevOps bootcamp over Seollal (Lunar New Year).
       </p>
       <p>
-        Check us out on <a href="https://www.youtube.com/@codeseoul" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">YouTube</a>.
+        I've taught full Java courses that take students from zero to junior engineer level. I've also covered Kubernetes, Prefect, AWS, and Golang, plus soft skills like presentations, resume writing, and project management.
+      </p>
+      <p>
+        Check us out on <a href="https://www.youtube.com/@codeseoul" target="_blank" rel="noopener noreferrer" class="text-primary-light underline underline-offset-2">YouTube</a>.
       </p>
     </div>
   </Section>
@@ -393,7 +451,7 @@ import OtherContributions from '../components/OtherContributions.astro';
       <!-- Social & Professional -->
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
         <a href="https://github.com/TheBeege" target="_blank" rel="noopener noreferrer"
-          class="group flex items-center gap-3 rounded-lg bg-surface-light px-4 py-3 text-text-muted hover:text-text hover:bg-surface-light/80 transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">
+          class="group flex items-center gap-3 rounded-lg bg-surface-light px-4 py-3 text-text-muted hover:text-text hover:bg-surface-light/80 transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-light">
           <svg class="w-5 h-5 shrink-0 text-text-muted group-hover:text-text transition-colors" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
             <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
           </svg>
@@ -402,7 +460,7 @@ import OtherContributions from '../components/OtherContributions.astro';
         </a>
 
         <a href="https://www.linkedin.com/in/thebeege/" target="_blank" rel="noopener noreferrer"
-          class="group flex items-center gap-3 rounded-lg bg-surface-light px-4 py-3 text-text-muted hover:text-text hover:bg-surface-light/80 transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">
+          class="group flex items-center gap-3 rounded-lg bg-surface-light px-4 py-3 text-text-muted hover:text-text hover:bg-surface-light/80 transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-light">
           <svg class="w-5 h-5 shrink-0 text-text-muted group-hover:text-text transition-colors" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
             <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
           </svg>
@@ -414,14 +472,14 @@ import OtherContributions from '../components/OtherContributions.astro';
       <!-- Direct Contact -->
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
         <a href="mailto:bryanberry235711@gmail.com"
-          class="group flex items-center gap-3 rounded-lg bg-surface-light px-4 py-3 text-text-muted hover:text-text hover:bg-surface-light/80 transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">
+          class="group flex items-center gap-3 rounded-lg bg-surface-light px-4 py-3 text-text-muted hover:text-text hover:bg-surface-light/80 transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-light">
           <svg class="w-5 h-5 shrink-0 text-text-muted group-hover:text-text transition-colors" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/>
           </svg>
           <span>bryanberry235711@gmail.com</span>
         </a>
 
-        <div class="flex items-center gap-3 rounded-lg bg-surface-light px-4 py-3 text-text-muted" aria-label="KakaoTalk contact: TheBeege">
+        <div class="flex items-center gap-3 rounded-lg bg-surface-light px-4 py-3 text-text-muted">
           <svg class="w-5 h-5 shrink-0" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
             <path d="M12 3c-5.076 0-9.192 3.284-9.192 7.332 0 2.6 1.734 4.89 4.344 6.18-.192.716-1.248 4.584-1.284 4.872 0 0-.024.204.108.288a.383.383 0 00.312.012s4.872-3.204 5.592-3.708c.372.048.756.072 1.128.072 5.076 0 9.192-3.284 9.192-7.332S17.076 3 12 3z"/>
           </svg>
@@ -429,19 +487,19 @@ import OtherContributions from '../components/OtherContributions.astro';
         </div>
 
         <a href="tel:+821050555576"
-          class="group flex items-center gap-3 rounded-lg bg-surface-light px-4 py-3 text-text-muted hover:text-text hover:bg-surface-light/80 transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">
+          class="group flex items-center gap-3 rounded-lg bg-surface-light px-4 py-3 text-text-muted hover:text-text hover:bg-surface-light/80 transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-light">
           <svg class="w-5 h-5 shrink-0 text-text-muted group-hover:text-text transition-colors" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/>
           </svg>
-          <span>+82 10-5055-5576 <span class="text-text-muted/60 text-sm">(KR)</span></span>
+          <span>+82 10-5055-5576 <span class="text-sm">(KR)</span></span>
         </a>
 
         <a href="tel:+19548507518"
-          class="group flex items-center gap-3 rounded-lg bg-surface-light px-4 py-3 text-text-muted hover:text-text hover:bg-surface-light/80 transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">
+          class="group flex items-center gap-3 rounded-lg bg-surface-light px-4 py-3 text-text-muted hover:text-text hover:bg-surface-light/80 transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-light">
           <svg class="w-5 h-5 shrink-0 text-text-muted group-hover:text-text transition-colors" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/>
           </svg>
-          <span>+1 954-850-7518 <span class="text-text-muted/60 text-sm">(US)</span></span>
+          <span>+1 954-850-7518 <span class="text-sm">(US)</span></span>
         </a>
       </div>
     </div>

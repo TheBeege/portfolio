@@ -1,0 +1,33 @@
+---
+---
+
+<dialog id="lightbox" aria-label="Full-size screenshot" class="m-auto p-0 bg-transparent backdrop:bg-black/80">
+  <form method="dialog">
+    <button class="fixed top-4 right-4 p-2 rounded-full bg-surface-light/80 text-text-muted hover:text-text transition-colors" aria-label="Close">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
+  </form>
+  <img id="lightbox-image" alt="" class="max-w-[90vw] max-h-[90vh] rounded-lg" />
+</dialog>
+
+<script>
+  const dialog = document.getElementById('lightbox') as HTMLDialogElement | null;
+  const image = document.getElementById('lightbox-image') as HTMLImageElement | null;
+
+  document.querySelectorAll('[data-lightbox]').forEach((trigger) => {
+    trigger.addEventListener('click', () => {
+      const thumbnail = trigger.querySelector('img');
+      if (!dialog || !image || !thumbnail) return;
+      image.src = thumbnail.src;
+      image.alt = thumbnail.alt;
+      dialog.showModal();
+    });
+  });
+
+  // Close when clicking the backdrop around the image
+  dialog?.addEventListener('click', (event) => {
+    if (event.target === dialog) dialog.close();
+  });
+</script>
