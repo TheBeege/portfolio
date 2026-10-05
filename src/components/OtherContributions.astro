@@ -23,11 +23,11 @@ const { entries } = Astro.props;
           <div class="flex flex-wrap items-baseline gap-x-2">
             <span class="font-medium text-text">{entry.title}</span>
             <span class="text-sm text-text-muted">@ {entry.company}</span>
-            <span class="text-xs text-text-muted italic">— {entry.role}</span>
+            <span class="text-xs text-text-muted italic">({entry.role})</span>
           </div>
           <div class="flex flex-wrap gap-1.5 shrink-0">
             {entry.tags.map((tag) => (
-              <span class="text-xs bg-primary/20 text-primary px-2 py-0.5 rounded">{tag}</span>
+              <span class="text-xs bg-primary/20 text-primary-light px-2 py-0.5 rounded">{tag}</span>
             ))}
           </div>
         </div>

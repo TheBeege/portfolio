@@ -3,6 +3,7 @@
 @theme {
   --color-primary: #2563eb;
   --color-primary-dark: #1d4ed8;
+  --color-primary-light: #60a5fa;
   --color-surface: #0f172a;
   --color-surface-light: #1e293b;
   --color-text: #f8fafc;
@@ -10,8 +11,13 @@
 }
 
 *:focus-visible {
-  outline: 2px solid var(--color-primary);
+  outline: 2px solid var(--color-primary-light);
   outline-offset: 2px;
+}
+
+/* Keep keyboard-focused links and buttons clear of the fixed nav */
+a, button {
+  scroll-margin-top: 5rem;
 }
 
 @media (prefers-reduced-motion: no-preference) {
