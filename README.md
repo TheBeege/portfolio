@@ -13,7 +13,7 @@ The site is published in English (`/`) and Korean (`/ko/`).
 - **Text** lives in `src/data/content/en.ts` and `src/data/content/ko.ts`. Both files share the `HomeContent` type, so a missing translation fails the build's type check (`npx astro check`).
 - **Language-neutral data** (tags, links, screenshot paths, ordering) lives once in `src/data/site.ts`. To add a project, add it there, then add its text to every language file.
 - **Interface strings** (nav, buttons, labels) are in `src/i18n/ui.ts`.
-- **Detection:** on a first visit to `/`, an inline script sends visitors whose browser prefers Korean to `/ko/`. Choosing a language with the switcher is saved in `localStorage` and always wins over detection. Direct links to `/ko/` and navigation from another page on this site are never redirected.
+- **Detection:** on a first visit to `/`, an inline script sends visitors whose browser prefers Korean to `/ko/`. Choosing a language with the switcher is saved in `localStorage` and always wins over detection. Direct links to `/ko/` navigation from another page on this site, Back/Forward, and reloads are never redirected.
 
 ## 🚀 Project Structure
 
