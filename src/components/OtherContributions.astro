@@ -4,18 +4,19 @@ interface Entry {
   company: string;
   role: string;
   summary: string;
-  tags: string[];
+  tags: readonly string[];
 }
 
 interface Props {
+  title: string;
   entries: Entry[];
 }
 
-const { entries } = Astro.props;
+const { title, entries } = Astro.props;
 ---
 
 <div class="bg-surface-light rounded-xl p-8 border border-white/10">
-  <h3 class="text-2xl font-semibold mb-6">Other Contributions</h3>
+  <h3 class="text-2xl font-semibold mb-6">{title}</h3>
   <div class="divide-y divide-white/10">
     {entries.map((entry) => (
       <div class="py-4 first:pt-0 last:pb-0">

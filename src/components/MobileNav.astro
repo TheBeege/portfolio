@@ -1,40 +1,59 @@
 ---
+import LanguageSwitcher from './LanguageSwitcher.astro';
+import { homePath, type Lang } from '../i18n/config';
+import { useTranslations } from '../i18n/ui';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+
+const links = [
+  { href: '#about', label: t.nav.about },
+  { href: '#professional-projects', label: t.nav.professionalProjects },
+  { href: '#personal-projects', label: t.nav.personalProjects },
+  { href: '#professional-experience', label: t.nav.experience },
+  { href: '#community', label: t.nav.community },
+  { href: '#contact', label: t.nav.contact },
+];
 ---
 
-<nav class="fixed top-0 w-full bg-surface/80 backdrop-blur-md border-b border-white/10 z-50">
+<nav data-open-label={t.openMenu} data-close-label={t.closeMenu} class="fixed top-0 w-full bg-surface/80 backdrop-blur-md border-b border-white/10 z-50">
   <div class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
-    <a href="/" class="text-lg font-bold hover:text-primary-light transition-colors">BB</a>
-    
-    <!-- Desktop nav -->
-    <div class="hidden md:flex gap-6 text-sm text-text-muted">
-      <a href="#about" class="hover:text-text transition-colors">About</a>
-      <a href="#professional-projects" class="hover:text-text transition-colors">Professional Projects</a>
-      <a href="#personal-projects" class="hover:text-text transition-colors">Personal Projects</a>
-      <a href="#professional-experience" class="hover:text-text transition-colors">Experience</a>
-      <a href="#community" class="hover:text-text transition-colors">Community</a>
-      <a href="#contact" class="hover:text-text transition-colors">Contact</a>
-    </div>
+    <a href={homePath(lang)} class="text-lg font-bold hover:text-primary-light transition-colors">BB<span class="sr-only"> – {t.homeLabel}</span></a>
 
-    <!-- Hamburger button -->
-    <button id="menu-toggle" class="md:hidden p-2 text-text-muted hover:text-text transition-colors" aria-label="Open menu" aria-expanded="false">
-      <svg id="menu-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-      </svg>
-      <svg id="close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-      </svg>
-    </button>
+    <div class="flex items-center gap-4 lg:gap-6">
+      <!-- Desktop nav -->
+      <div class="hidden lg:flex gap-6 text-sm text-text-muted whitespace-nowrap">
+        {links.map((link) => (
+          <a href={link.href} class="hover:text-text transition-colors">{link.label}</a>
+        ))}
+      </div>
+
+      <div class="lg:border-l lg:border-white/10 lg:pl-6">
+        <LanguageSwitcher lang={lang} />
+      </div>
+
+      <!-- Hamburger button -->
+      <button id="menu-toggle" class="lg:hidden p-2 text-text-muted hover:text-text transition-colors" aria-label={t.openMenu} aria-expanded="false" aria-controls="mobile-menu">
+        <svg id="menu-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+        <svg id="close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
   </div>
 
   <!-- Mobile drawer -->
-  <div id="mobile-menu" class="hidden md:hidden border-t border-white/10 bg-surface/95 backdrop-blur-md">
+  <div id="mobile-menu" class="hidden lg:hidden border-t border-white/10 bg-surface/95 backdrop-blur-md">
     <div class="flex flex-col px-6 py-4 gap-4 text-text-muted">
-      <a href="#about" class="hover:text-text transition-colors py-2">About</a>
-      <a href="#professional-projects" class="hover:text-text transition-colors py-2">Professional Projects</a>
-      <a href="#personal-projects" class="hover:text-text transition-colors py-2">Personal Projects</a>
-      <a href="#professional-experience" class="hover:text-text transition-colors py-2">Experience</a>
-      <a href="#community" class="hover:text-text transition-colors py-2">Community</a>
-      <a href="#contact" class="hover:text-text transition-colors py-2">Contact</a>
+      {links.map((link) => (
+        <a href={link.href} class="hover:text-text transition-colors py-2">{link.label}</a>
+      ))}
     </div>
   </div>
 </nav>
@@ -51,6 +70,9 @@
     menuIcon?.classList.toggle('hidden');
     closeIcon?.classList.toggle('hidden');
     toggle.setAttribute('aria-expanded', String(!isOpen));
+    const nav = toggle.closest('nav');
+    const label = isOpen ? nav?.dataset.openLabel : nav?.dataset.closeLabel;
+    if (label) toggle.setAttribute('aria-label', label);
   });
 
   // Close menu when a link is clicked
@@ -60,6 +82,8 @@
       menuIcon?.classList.remove('hidden');
       closeIcon?.classList.add('hidden');
       toggle?.setAttribute('aria-expanded', 'false');
+      const openLabel = toggle?.closest('nav')?.dataset.openLabel;
+      if (openLabel) toggle?.setAttribute('aria-label', openLabel);
     });
   });
 </script>

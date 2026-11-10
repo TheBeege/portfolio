@@ -25,3 +25,21 @@ a, button {
     scroll-behavior: smooth;
   }
 }
+
+/* Inline links inside prose (used by translated HTML strings) */
+.text-link {
+  color: var(--color-primary-light);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* Korean reads better when line breaks fall between words rather than mid-word */
+:lang(ko) {
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+/* Korean fonts have no italic; browsers fake a slant that reads poorly */
+:lang(ko) .italic {
+  font-style: normal;
+}
