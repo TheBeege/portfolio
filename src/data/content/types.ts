@@ -32,6 +32,8 @@ export interface HomeContent {
   hero: {
     greeting: string;
     name: string;
+    /** Text glued to the name, e.g. Korean "입니다!"; the line may break between the two */
+    nameSuffix?: string;
     legalName: string;
     tagline: string;
     availabilityHtml: string;

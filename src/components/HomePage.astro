@@ -44,11 +44,11 @@ const contributions = otherContributions.map((entry) => ({
 <Layout lang={lang} title={c.meta.title} description={c.meta.description} footerName={c.footerName}>
   <!-- Hero -->
   <div class="min-h-[70vh] flex items-center">
-    <div class="max-w-5xl mx-auto px-6 flex flex-col md:flex-row items-center gap-8 md:gap-12">
-      <div class="flex-1 order-2 md:order-1">
+    <div class="max-w-5xl min-w-0 mx-auto px-6 flex flex-col md:flex-row items-center gap-8 md:gap-12">
+      <div class="flex-1 min-w-0 order-2 md:order-1">
         <!-- Monospace suits Latin text; Korean falls back to wide full-width CJK mono glyphs -->
         <p class:list={['text-primary-light mb-4', lang === 'en' && 'font-mono']}>{c.hero.greeting}</p>
-        <h1 class="text-5xl md:text-7xl font-bold mb-4">{c.hero.name}</h1>
+        <h1 class="text-5xl md:text-7xl font-bold mb-4">{c.hero.name}{c.hero.nameSuffix && <><wbr />{c.hero.nameSuffix}</>}</h1>
         <p class="text-text-muted mb-4">{c.hero.legalName}</p>
         <p class="text-xl md:text-2xl text-text-muted max-w-2xl mb-4">
           {c.hero.tagline}
