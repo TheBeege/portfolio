@@ -2,17 +2,17 @@ import type { HomeContent } from './types';
 
 const ko: HomeContent = {
   meta: {
-    title: '브라이언 “비지” 베리 | 엔지니어링 리더',
+    title: '브라이언 “Beege” 베리 | 엔지니어링 리더',
     description: 'Beege: 엔지니어링 리더, 빌더, 커뮤니티 오거나이저',
   },
 
   hero: {
     greeting: '안녕하세요, 저는',
     name: 'Beege입니다!',
-    legalName: '딱딱하게 법적인 이름으로는 브라이언 베리(Bryan Berry)입니다',
+    legalName: '재미없게 정식 이름으로 부르자면 브라이언 베리(Bryan Berry)입니다',
     tagline: '서울에서 활동하는 엔지니어링 리더, 빌더, 그리고 커뮤니티 오거나이저입니다.',
     availabilityHtml:
-      '엔지니어링 리더십 포지션 구직 중입니다. <span class="whitespace-nowrap">F-2-7</span> 비자(2028년까지) 보유로 비자 스폰서십이 필요 없습니다.',
+      '엔지니어링 리더십 포지션을 찾고 있습니다. <span class="whitespace-nowrap">F-2-7</span> 비자(2028년까지 유효)를 보유하고 있어 비자 스폰서십이 필요 없습니다.',
     ctaContact: '연락하기',
     ctaResume: '이력서',
     ctaWork: '작업 보기',
@@ -68,7 +68,7 @@ const ko: HomeContent = {
       teamSize: '데이터 엔지니어 6명',
       highlight: '추론 작업 하나를 2개월에서 24시간 이내로 단축',
       description:
-        '의료 영상 데이터 수집, 어노테이션 데이터셋 준비, 사내 AI 모델을 이용한 대규모 추론을 수행하는 대규모 병렬 파이프라인입니다. 최초 아이디어를 구상하고 Prefect로 개념 증명(PoC)을 만든 뒤 팀에 이관했습니다. 스팟 인스턴스와 오토스케일링 튜닝으로 수백 테라바이트 규모의 데이터를 일상적으로 처리했습니다.',
+        '의료 영상 데이터 수집, 어노테이션 데이터셋 준비, 사내 AI 모델로 일괄(bulk) 추론을 수행하는 대규모 병렬 파이프라인입니다. 최초 아이디어를 구상하고 Prefect로 개념 증명(PoC)을 만든 뒤 팀에 이관했습니다. 스팟 인스턴스와 오토스케일링 튜닝으로 수백 테라바이트 규모의 데이터를 일상적으로 처리했습니다.',
     },
     'lunit-oncology': {
       title: '종양학 어노테이션 도구',
@@ -111,7 +111,7 @@ const ko: HomeContent = {
         '사람의 개입 없이 렌터카를 예약하고 이용할 수 있는 서비스입니다. 8개 서비스로 이루어진 Spring Boot 플랫폼의 일부로 예약 및 차량 접근 백엔드 API를 개발했습니다.',
     },
     'riot-network-impact': {
-      title: '네트워크 플레이어 영향 보고서',
+      title: '유·무선 연결의 승률 영향 분석 보고서',
       company: '라이엇 게임즈',
       roles: ['데이터 분석가'],
       highlight: '식별 가능한 모든 요인을 보정한 결과, 유선 연결 플레이어의 승률이 통계적으로 유의미하게 1% 높게 나타남',
@@ -168,19 +168,19 @@ const ko: HomeContent = {
       },
       'asurion-nagios': {
         title: 'Nagios 확장',
-        company: 'Asurion Mobile Apps',
+        company: '어슈어리온 모바일 앱',
         role: '모니터링',
         summary: 'Nagios 지표를 확장하고 알림을 개선해 불필요한 알림을 줄였습니다.',
       },
       'asurion-splunk-deployment': {
         title: 'Splunk 도입',
-        company: 'Asurion Mobile Apps',
+        company: '어슈어리온 모바일 앱',
         role: '모니터링',
         summary: '로그 수집, 지표 추출, 대시보드를 포함해 Splunk를 처음부터 새로 도입했습니다.',
       },
       'asurion-build-system': {
         title: '빌드 시스템 프로토타입',
-        company: 'Asurion Mobile Apps',
+        company: '어슈어리온 모바일 앱',
         role: '모니터링',
         summary: '레거시 Perl에서 Ruby on Rails로의 빌드 시스템 이전을 프로토타이핑했으며, 퇴사 후 실제로 도입되었습니다.',
       },
@@ -269,7 +269,7 @@ const ko: HomeContent = {
     },
     pubg: {
       title: '백엔드 엔지니어',
-      org: '펍지주식회사, 서울 서초구',
+      org: 'PUBG(펍지주식회사), 서울 서초구',
       period: '2017년 11월 – 2018년 7월 (8개월)',
       bullets: [
         'Go와 C#을 사용한 마이크로서비스 개발 지원.',
@@ -312,7 +312,7 @@ const ko: HomeContent = {
       ],
     },
     asurion: {
-      title: 'Analyst II → Production Systems Analyst',
+      title: '분석가 II → 프로덕션 시스템 분석가',
       org: '어슈어리온, 미국 테네시주 내슈빌 → 캘리포니아주 샌프란시스코',
       period: '2010년 8월 – 2013년 10월 (3년)',
       bullets: [

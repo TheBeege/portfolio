@@ -35,10 +35,11 @@ const others = (Object.keys(languages) as Lang[]).filter((code) => code !== lang
       try {
         localStorage.setItem(storageKey, link.dataset.langSwitch);
       } catch {
-        // Storage unavailable (private mode, blocked): the switch still works for this visit
+        // Storage unavailable (private mode, blocked). Detection still lets this click
+        // through because it skips visitors arriving from another page on this site.
       }
-      // Stay on the same section after switching
-      if (location.hash) link.setAttribute('href', link.pathname + location.hash);
+      // Keep the query string and stay on the same section after switching
+      link.setAttribute('href', link.pathname + location.search + location.hash);
     });
   });
 </script>

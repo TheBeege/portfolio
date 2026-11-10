@@ -39,12 +39,17 @@ const langPaths = Object.fromEntries(allLangs.map((code) => [code, homePath(code
     {/*
       Automatic language detection, placed first in <head> so the redirect happens before
       anything renders. Only runs on the default (English) page so a direct link to /ko/
-      is always honoured. An explicit choice made with the language switcher wins over
-      the browser's language list.
+      is always honoured, and so is navigation from another page on this site. An explicit
+      choice made with the language switcher wins over the browser's language list.
     */}
     {lang === defaultLang && (
       <script is:inline define:vars={{ storageKey: LANG_STORAGE_KEY, current: lang, langPaths }}>
         (function () {
+          // Arriving from another page on this site (e.g. the language switcher) means the
+          // visitor chose this page, even if their choice could not be saved.
+          try {
+            if (document.referrer && new URL(document.referrer).origin === location.origin) return;
+          } catch (e) {}
           var preferred = null;
           try {
             preferred = localStorage.getItem(storageKey);

@@ -19,7 +19,8 @@ export default defineConfig({
     sitemap({
       i18n: {
         defaultLocale: 'en',
-        locales: { en: 'en-US', ko: 'ko-KR' },
+        // Same codes as the hreflang tags in Layout.astro
+        locales: { en: 'en', ko: 'ko' },
       },
     }),
   ],

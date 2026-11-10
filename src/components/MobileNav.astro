@@ -22,7 +22,7 @@ const links = [
 
 <nav data-open-label={t.openMenu} data-close-label={t.closeMenu} class="fixed top-0 w-full bg-surface/80 backdrop-blur-md border-b border-white/10 z-50">
   <div class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
-    <a href={homePath(lang)} aria-label={t.homeLabel} class="text-lg font-bold hover:text-primary-light transition-colors">BB</a>
+    <a href={homePath(lang)} class="text-lg font-bold hover:text-primary-light transition-colors">BB<span class="sr-only"> – {t.homeLabel}</span></a>
 
     <div class="flex items-center gap-4 md:gap-6">
       <!-- Desktop nav -->

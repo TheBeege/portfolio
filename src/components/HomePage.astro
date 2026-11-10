@@ -21,11 +21,17 @@ const c = content[lang];
 /** Merge language-neutral project data with this language's text */
 function project(data: ProjectData) {
   const text = c.projects[data.id as keyof typeof c.projects];
+  const altCount = text.imageAlts?.length ?? 0;
+  if ((data.images?.length ?? 0) !== altCount) {
+    throw new Error(
+      `[${lang}] Project "${data.id}" has ${data.images?.length ?? 0} screenshot(s) but ${altCount} alt text(s) in src/data/content/${lang}.ts`
+    );
+  }
   return {
     ...text,
     tags: data.tags,
     links: data.links?.map((link) => ({ label: t.project[link.kind], url: link.url })),
-    images: data.images?.map((src, i) => ({ src, alt: text.imageAlts?.[i] ?? '' })),
+    images: data.images?.map((src, i) => ({ src, alt: text.imageAlts![i] })),
   };
 }
 
@@ -40,7 +46,8 @@ const contributions = otherContributions.map((entry) => ({
   <div class="min-h-[70vh] flex items-center">
     <div class="max-w-5xl mx-auto px-6 flex flex-col md:flex-row items-center gap-8 md:gap-12">
       <div class="flex-1 order-2 md:order-1">
-        <p class="text-primary-light font-mono mb-4">{c.hero.greeting}</p>
+        <!-- Monospace suits Latin text; Korean falls back to wide full-width CJK mono glyphs -->
+        <p class:list={['text-primary-light mb-4', lang === 'en' && 'font-mono']}>{c.hero.greeting}</p>
         <h1 class="text-5xl md:text-7xl font-bold mb-4">{c.hero.name}</h1>
         <p class="text-text-muted mb-4">{c.hero.legalName}</p>
         <p class="text-xl md:text-2xl text-text-muted max-w-2xl mb-4">
