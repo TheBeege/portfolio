@@ -331,9 +331,9 @@ const en: HomeContent = {
 
   community: {
     paragraphsHtml: [
-      'I founded <a href="https://www.meetup.com/codeseoul/" target="_blank" rel="noopener noreferrer" class="text-link">CodeSeoul</a> in 2016. It\'s a non-profit developer community in Seoul with 3,400+ members on Meetup, recently averaging 40 attendees per event. We run coding classes, workshops, lectures, hackathons, and socials. We also ran a DevOps bootcamp over Seollal (Lunar New Year).',
+      'I founded <a href="https://www.meetup.com/codeseoul/" target="_blank" rel="noopener noreferrer" class="text-link">CodeSeoul<span class="sr-only"> (opens in new tab)</span></a> in 2016. It\'s a non-profit developer community in Seoul with 3,400+ members on Meetup, recently averaging 40 attendees per event. We run coding classes, workshops, lectures, hackathons, and socials. We also ran a DevOps bootcamp over Seollal (Lunar New Year).',
       "I've taught full Java courses that take students from zero to junior engineer level. I've also covered Kubernetes, Prefect, AWS, and Golang, plus soft skills like presentations, resume writing, and project management.",
-      'Check us out on <a href="https://www.youtube.com/@codeseoul" target="_blank" rel="noopener noreferrer" class="text-link">YouTube</a>.',
+      'Check us out on <a href="https://www.youtube.com/@codeseoul" target="_blank" rel="noopener noreferrer" class="text-link">YouTube<span class="sr-only"> (opens in new tab)</span></a>.',
     ],
   },
 

@@ -38,3 +38,8 @@ a, button {
   word-break: keep-all;
   overflow-wrap: break-word;
 }
+
+/* Korean fonts have no italic; browsers fake a slant that reads poorly */
+:lang(ko) .italic {
+  font-style: normal;
+}

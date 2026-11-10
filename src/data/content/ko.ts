@@ -331,9 +331,9 @@ const ko: HomeContent = {
 
   community: {
     paragraphsHtml: [
-      '2016년에 <a href="https://www.meetup.com/codeseoul/" target="_blank" rel="noopener noreferrer" class="text-link">CodeSeoul</a>을 설립했습니다. Meetup 회원 3,400명 이상을 보유한 서울의 비영리 개발자 커뮤니티로, 최근에는 행사당 평균 40명이 참석하고 있습니다. 코딩 수업, 워크숍, 강연, 해커톤, 네트워킹 모임을 운영하며, 설 연휴에는 데브옵스 부트캠프를 진행하기도 했습니다.',
+      '2016년에 <a href="https://www.meetup.com/codeseoul/" target="_blank" rel="noopener noreferrer" class="text-link">CodeSeoul<span class="sr-only"> (새 탭에서 열림)</span></a>을 설립했습니다. Meetup 회원 3,400명 이상을 보유한 서울의 비영리 개발자 커뮤니티로, 최근에는 행사당 평균 40명이 참석하고 있습니다. 코딩 수업, 워크숍, 강연, 해커톤, 네트워킹 모임을 운영하며, 설 연휴에는 데브옵스 부트캠프를 진행하기도 했습니다.',
       '수강생을 완전 초보에서 주니어 엔지니어 수준까지 이끄는 Java 전체 과정을 가르쳤습니다. 그 밖에도 Kubernetes, Prefect, AWS, Golang은 물론 발표, 이력서 작성, 프로젝트 관리 같은 소프트 스킬도 강의했습니다.',
-      '<a href="https://www.youtube.com/@codeseoul" target="_blank" rel="noopener noreferrer" class="text-link">YouTube</a>에서도 만나보세요.',
+      '<a href="https://www.youtube.com/@codeseoul" target="_blank" rel="noopener noreferrer" class="text-link">YouTube<span class="sr-only"> (새 탭에서 열림)</span></a>에서도 만나보세요.',
     ],
   },
 
