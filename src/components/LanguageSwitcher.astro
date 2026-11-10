@@ -21,7 +21,7 @@ const others = (Object.keys(languages) as Lang[]).filter((code) => code !== lang
       hreflang={code}
       lang={code}
       data-lang-switch={code}
-      class="text-sm text-text-muted hover:text-text transition-colors px-1 py-2"
+      class="text-sm text-text-muted hover:text-text transition-colors px-1 py-2 whitespace-nowrap"
     >
       {languages[code].label}
     </a>

@@ -36,5 +36,5 @@ a, button {
 /* Korean reads better when line breaks fall between words rather than mid-word */
 :lang(ko) {
   word-break: keep-all;
-  overflow-wrap: anywhere;
+  overflow-wrap: break-word;
 }

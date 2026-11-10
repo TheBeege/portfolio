@@ -24,20 +24,20 @@ const links = [
   <div class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
     <a href={homePath(lang)} class="text-lg font-bold hover:text-primary-light transition-colors">BB<span class="sr-only"> – {t.homeLabel}</span></a>
 
-    <div class="flex items-center gap-4 md:gap-6">
+    <div class="flex items-center gap-4 lg:gap-6">
       <!-- Desktop nav -->
-      <div class="hidden md:flex gap-6 text-sm text-text-muted">
+      <div class="hidden lg:flex gap-6 text-sm text-text-muted whitespace-nowrap">
         {links.map((link) => (
           <a href={link.href} class="hover:text-text transition-colors">{link.label}</a>
         ))}
       </div>
 
-      <div class="md:border-l md:border-white/10 md:pl-6">
+      <div class="lg:border-l lg:border-white/10 lg:pl-6">
         <LanguageSwitcher lang={lang} />
       </div>
 
       <!-- Hamburger button -->
-      <button id="menu-toggle" class="md:hidden p-2 text-text-muted hover:text-text transition-colors" aria-label={t.openMenu} aria-expanded="false" aria-controls="mobile-menu">
+      <button id="menu-toggle" class="lg:hidden p-2 text-text-muted hover:text-text transition-colors" aria-label={t.openMenu} aria-expanded="false" aria-controls="mobile-menu">
         <svg id="menu-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
         </svg>
@@ -49,7 +49,7 @@ const links = [
   </div>
 
   <!-- Mobile drawer -->
-  <div id="mobile-menu" class="hidden md:hidden border-t border-white/10 bg-surface/95 backdrop-blur-md">
+  <div id="mobile-menu" class="hidden lg:hidden border-t border-white/10 bg-surface/95 backdrop-blur-md">
     <div class="flex flex-col px-6 py-4 gap-4 text-text-muted">
       {links.map((link) => (
         <a href={link.href} class="hover:text-text transition-colors py-2">{link.label}</a>

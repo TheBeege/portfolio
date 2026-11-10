@@ -33,7 +33,7 @@ const en = {
 export type UIStrings = typeof en;
 
 const ko: UIStrings = {
-    skipToContent: '본문으로 건너뛰기',
+  skipToContent: '본문으로 건너뛰기',
   opensInNewTab: '(새 탭에서 열림)',
   homeLabel: '홈',
   openMenu: '메뉴 열기',
@@ -57,8 +57,8 @@ const ko: UIStrings = {
   },
   lightbox: {
     label: '원본 크기 스크린샷',
-      close: '닫기',
-    },
+    close: '닫기',
+  },
 };
 
 export const ui: Record<Lang, UIStrings> = { en, ko };
